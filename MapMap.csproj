@@ -7,7 +7,7 @@
     <ProjectGuid>{8A7B262B-79FE-4A0E-BC35-876C50A02687}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MapMap</RootNamespace>
+    <RootNamespace>de.mastersign.mapmap</RootNamespace>
     <AssemblyName>MapMap</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

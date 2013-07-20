@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
-namespace MapMap
+namespace de.mastersign.mapmap
 {
     static class Program
     {

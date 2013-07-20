@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
-using System.Security.AccessControl;
-using de.mastersign.controls;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace MapMap
+namespace de.mastersign.mapmap
 {
     partial class SettingsForm
     {

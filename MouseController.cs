@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MapMap
+namespace de.mastersign.mapmap
 {
     static class MouseController
     {
