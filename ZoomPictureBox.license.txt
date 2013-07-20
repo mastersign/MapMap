@@ -1,0 +1,16 @@
+Copyright © 2013 Tobias Kiertscher <tobias@kiertscher.net>
+
+http://www.mastersign.de/
+
+The ZoomPictureBox component is allowed to be used freely 
+with the screen capture tool MapMap. 
+The ZoomPictureBox can be freely distributed with the source code
+and with a build of MapMap. Any modification to the 'ZoomPictureBox.dll' 
+is permitted.
+
+The ZoomPictureBox must not be used in another software. To use the 
+ZoomPictureBox in the context of another software despite MapMap,
+an additional license is to obtain from the author Tobias Kiertscher.
+
+Feel free to contact the author for any questions regarding the 
+ZoomPictureBox component.
