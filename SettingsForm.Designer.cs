@@ -322,7 +322,7 @@ namespace MapMap
             this.numDragStepTime.Size = new System.Drawing.Size(56, 20);
             this.numDragStepTime.TabIndex = 7;
             this.numDragStepTime.Value = new decimal(new int[] {
-            65,
+            33,
             0,
             0,
             196608});
@@ -351,10 +351,10 @@ namespace MapMap
             this.numTileWaitTime.Size = new System.Drawing.Size(56, 20);
             this.numTileWaitTime.TabIndex = 7;
             this.numTileWaitTime.Value = new decimal(new int[] {
-            15,
+            1,
             0,
             0,
-            65536});
+            0});
             this.numTileWaitTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // lblTileWaitTime
@@ -592,10 +592,10 @@ namespace MapMap
             this.numStartWaitTime1.Size = new System.Drawing.Size(56, 20);
             this.numStartWaitTime1.TabIndex = 7;
             this.numStartWaitTime1.Value = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
-            65536});
+            0});
             this.numStartWaitTime1.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // pictureBox
@@ -776,7 +776,7 @@ namespace MapMap
             this.numStartWaitTime2.Size = new System.Drawing.Size(56, 20);
             this.numStartWaitTime2.TabIndex = 7;
             this.numStartWaitTime2.Value = new decimal(new int[] {
-            4,
+            5,
             0,
             0,
             0});
