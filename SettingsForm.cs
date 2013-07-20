@@ -340,5 +340,15 @@ namespace de.mastersign.mapmap
                 bitmap.Save(saveFileDialog.FileName, ImageFormat.Png);
             }
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            new AboutBox().ShowDialog(this);
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/mastersign/MapMap/blob/master/README.md");
+        }
     }
 }

@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("MapMap")]
 [assembly: AssemblyDescription("A tool to capture large pictures from maps in the browser.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("www.mastersign.de")]
 [assembly: AssemblyProduct("MapMap")]
-[assembly: AssemblyCopyright("Copyright © Tobias Kiertscher 2013")]
+[assembly: AssemblyCopyright("Copyright © 2013 Tobias Kiertscher")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

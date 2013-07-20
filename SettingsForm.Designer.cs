@@ -82,6 +82,8 @@ namespace de.mastersign.mapmap
             this.numStartWaitTime2 = new System.Windows.Forms.NumericUpDown();
             this.chkReturnToStart = new System.Windows.Forms.CheckBox();
             this.lblCancelationHint = new System.Windows.Forms.Label();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistLeft)).BeginInit();
@@ -104,11 +106,14 @@ namespace de.mastersign.mapmap
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.Location = new System.Drawing.Point(551, 12);
+            this.btnStart.Image = global::de.mastersign.mapmap.Properties.Resources.record_16;
+            this.btnStart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStart.Location = new System.Drawing.Point(599, 12);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(80, 25);
+            this.btnStart.Size = new System.Drawing.Size(60, 25);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
+            this.btnStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -638,7 +643,7 @@ namespace de.mastersign.mapmap
             this.pictureBox.ShowRotationTools = true;
             this.pictureBox.ShowSelectionTools = false;
             this.pictureBox.ShowZoomLevelTools = true;
-            this.pictureBox.Size = new System.Drawing.Size(414, 361);
+            this.pictureBox.Size = new System.Drawing.Size(475, 361);
             this.pictureBox.SuppressInterpolation = true;
             this.pictureBox.TabIndex = 16;
             this.pictureBox.WaitAnimationInterval = 50;
@@ -650,11 +655,14 @@ namespace de.mastersign.mapmap
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(551, 43);
+            this.btnSave.Image = global::de.mastersign.mapmap.Properties.Resources.save_16;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(599, 43);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 25);
+            this.btnSave.Size = new System.Drawing.Size(60, 25);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -789,7 +797,7 @@ namespace de.mastersign.mapmap
             this.chkReturnToStart.AutoSize = true;
             this.chkReturnToStart.Checked = true;
             this.chkReturnToStart.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkReturnToStart.Location = new System.Drawing.Point(382, 51);
+            this.chkReturnToStart.Location = new System.Drawing.Point(455, 51);
             this.chkReturnToStart.Name = "chkReturnToStart";
             this.chkReturnToStart.Size = new System.Drawing.Size(119, 17);
             this.chkReturnToStart.TabIndex = 18;
@@ -799,19 +807,40 @@ namespace de.mastersign.mapmap
             // lblCancelationHint
             // 
             this.lblCancelationHint.AutoSize = true;
-            this.lblCancelationHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCancelationHint.Location = new System.Drawing.Point(214, 80);
             this.lblCancelationHint.Margin = new System.Windows.Forms.Padding(3);
             this.lblCancelationHint.Name = "lblCancelationHint";
-            this.lblCancelationHint.Size = new System.Drawing.Size(400, 13);
+            this.lblCancelationHint.Size = new System.Drawing.Size(332, 13);
             this.lblCancelationHint.TabIndex = 19;
             this.lblCancelationHint.Text = "Press and hold the ALT modifier key to cancel the capturing process.";
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbout.Image = global::de.mastersign.mapmap.Properties.Resources.info_16;
+            this.btnAbout.Location = new System.Drawing.Point(665, 12);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(27, 25);
+            this.btnAbout.TabIndex = 0;
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelp.Image = global::de.mastersign.mapmap.Properties.Resources.help_16;
+            this.btnHelp.Location = new System.Drawing.Point(665, 43);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(27, 25);
+            this.btnHelp.TabIndex = 0;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 472);
+            this.ClientSize = new System.Drawing.Size(704, 472);
             this.Controls.Add(this.lblCancelationHint);
             this.Controls.Add(this.chkReturnToStart);
             this.Controls.Add(this.radKeyboardControl);
@@ -856,11 +885,13 @@ namespace de.mastersign.mapmap
             this.Controls.Add(this.numKeyStepX);
             this.Controls.Add(this.numTilesX);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblDragRegionRect);
             this.Controls.Add(this.pictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(650, 510);
+            this.MinimumSize = new System.Drawing.Size(720, 510);
             this.Name = "SettingsForm";
             this.Text = "MapMap";
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).EndInit();
@@ -935,6 +966,8 @@ namespace de.mastersign.mapmap
         private System.Windows.Forms.NumericUpDown numStartWaitTime2;
         private System.Windows.Forms.CheckBox chkReturnToStart;
         private System.Windows.Forms.Label lblCancelationHint;
+        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 
