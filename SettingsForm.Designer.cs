@@ -111,7 +111,7 @@ namespace de.mastersign.mapmap
             this.btnStart.Location = new System.Drawing.Point(599, 12);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(60, 25);
-            this.btnStart.TabIndex = 0;
+            this.btnStart.TabIndex = 44;
             this.btnStart.Text = "Start";
             this.btnStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStart.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@ namespace de.mastersign.mapmap
             0});
             this.numTilesX.Name = "numTilesX";
             this.numTilesX.Size = new System.Drawing.Size(56, 20);
-            this.numTilesX.TabIndex = 1;
+            this.numTilesX.TabIndex = 7;
             this.numTilesX.Value = new decimal(new int[] {
             2,
             0,
@@ -155,7 +155,7 @@ namespace de.mastersign.mapmap
             0});
             this.numTilesY.Name = "numTilesY";
             this.numTilesY.Size = new System.Drawing.Size(56, 20);
-            this.numTilesY.TabIndex = 2;
+            this.numTilesY.TabIndex = 9;
             this.numTilesY.Value = new decimal(new int[] {
             2,
             0,
@@ -169,7 +169,7 @@ namespace de.mastersign.mapmap
             this.lblTilesX.Location = new System.Drawing.Point(12, 92);
             this.lblTilesX.Name = "lblTilesX";
             this.lblTilesX.Size = new System.Drawing.Size(56, 13);
-            this.lblTilesX.TabIndex = 3;
+            this.lblTilesX.TabIndex = 6;
             this.lblTilesX.Text = "Tiles (hor.)";
             // 
             // lblTilesY
@@ -178,7 +178,7 @@ namespace de.mastersign.mapmap
             this.lblTilesY.Location = new System.Drawing.Point(12, 116);
             this.lblTilesY.Name = "lblTilesY";
             this.lblTilesY.Size = new System.Drawing.Size(59, 13);
-            this.lblTilesY.TabIndex = 3;
+            this.lblTilesY.TabIndex = 8;
             this.lblTilesY.Text = "Tiles (vert.)";
             // 
             // numDragDistLeft
@@ -191,7 +191,7 @@ namespace de.mastersign.mapmap
             0});
             this.numDragDistLeft.Name = "numDragDistLeft";
             this.numDragDistLeft.Size = new System.Drawing.Size(56, 20);
-            this.numDragDistLeft.TabIndex = 5;
+            this.numDragDistLeft.TabIndex = 14;
             this.numDragDistLeft.Value = new decimal(new int[] {
             100,
             0,
@@ -205,7 +205,7 @@ namespace de.mastersign.mapmap
             this.lblDragRegion.Location = new System.Drawing.Point(12, 175);
             this.lblDragRegion.Name = "lblDragRegion";
             this.lblDragRegion.Size = new System.Drawing.Size(67, 13);
-            this.lblDragRegion.TabIndex = 3;
+            this.lblDragRegion.TabIndex = 11;
             this.lblDragRegion.Text = "Drag Region";
             // 
             // numDragDistTop
@@ -218,7 +218,7 @@ namespace de.mastersign.mapmap
             0});
             this.numDragDistTop.Name = "numDragDistTop";
             this.numDragDistTop.Size = new System.Drawing.Size(56, 20);
-            this.numDragDistTop.TabIndex = 5;
+            this.numDragDistTop.TabIndex = 12;
             this.numDragDistTop.Value = new decimal(new int[] {
             100,
             0,
@@ -236,7 +236,7 @@ namespace de.mastersign.mapmap
             0});
             this.numDragDistRight.Name = "numDragDistRight";
             this.numDragDistRight.Size = new System.Drawing.Size(56, 20);
-            this.numDragDistRight.TabIndex = 5;
+            this.numDragDistRight.TabIndex = 15;
             this.numDragDistRight.Value = new decimal(new int[] {
             100,
             0,
@@ -254,7 +254,7 @@ namespace de.mastersign.mapmap
             0});
             this.numDragDistBottom.Name = "numDragDistBottom";
             this.numDragDistBottom.Size = new System.Drawing.Size(56, 20);
-            this.numDragDistBottom.TabIndex = 5;
+            this.numDragDistBottom.TabIndex = 16;
             this.numDragDistBottom.Value = new decimal(new int[] {
             100,
             0,
@@ -268,7 +268,7 @@ namespace de.mastersign.mapmap
             this.lblDragRegionRect.Location = new System.Drawing.Point(98, 183);
             this.lblDragRegionRect.Name = "lblDragRegionRect";
             this.lblDragRegionRect.Size = new System.Drawing.Size(89, 53);
-            this.lblDragRegionRect.TabIndex = 6;
+            this.lblDragRegionRect.TabIndex = 13;
             // 
             // numDragStepSize
             // 
@@ -280,7 +280,7 @@ namespace de.mastersign.mapmap
             0});
             this.numDragStepSize.Name = "numDragStepSize";
             this.numDragStepSize.Size = new System.Drawing.Size(56, 20);
-            this.numDragStepSize.TabIndex = 7;
+            this.numDragStepSize.TabIndex = 18;
             this.numDragStepSize.Value = new decimal(new int[] {
             20,
             0,
@@ -294,7 +294,7 @@ namespace de.mastersign.mapmap
             this.lblDragStepSize.Location = new System.Drawing.Point(12, 253);
             this.lblDragStepSize.Name = "lblDragStepSize";
             this.lblDragStepSize.Size = new System.Drawing.Size(47, 13);
-            this.lblDragStepSize.TabIndex = 3;
+            this.lblDragStepSize.TabIndex = 17;
             this.lblDragStepSize.Text = "Stepsize";
             // 
             // lblDragStepTime
@@ -303,7 +303,7 @@ namespace de.mastersign.mapmap
             this.lblDragStepTime.Location = new System.Drawing.Point(12, 394);
             this.lblDragStepTime.Name = "lblDragStepTime";
             this.lblDragStepTime.Size = new System.Drawing.Size(59, 13);
-            this.lblDragStepTime.TabIndex = 3;
+            this.lblDragStepTime.TabIndex = 26;
             this.lblDragStepTime.Text = "Step Delay";
             // 
             // numDragStepTime
@@ -327,7 +327,7 @@ namespace de.mastersign.mapmap
             196608});
             this.numDragStepTime.Name = "numDragStepTime";
             this.numDragStepTime.Size = new System.Drawing.Size(56, 20);
-            this.numDragStepTime.TabIndex = 7;
+            this.numDragStepTime.TabIndex = 27;
             this.numDragStepTime.Value = new decimal(new int[] {
             33,
             0,
@@ -356,7 +356,7 @@ namespace de.mastersign.mapmap
             196608});
             this.numTileWaitTime.Name = "numTileWaitTime";
             this.numTileWaitTime.Size = new System.Drawing.Size(56, 20);
-            this.numTileWaitTime.TabIndex = 7;
+            this.numTileWaitTime.TabIndex = 25;
             this.numTileWaitTime.Value = new decimal(new int[] {
             1,
             0,
@@ -370,7 +370,7 @@ namespace de.mastersign.mapmap
             this.lblTileWaitTime.Location = new System.Drawing.Point(12, 370);
             this.lblTileWaitTime.Name = "lblTileWaitTime";
             this.lblTileWaitTime.Size = new System.Drawing.Size(54, 13);
-            this.lblTileWaitTime.TabIndex = 3;
+            this.lblTileWaitTime.TabIndex = 24;
             this.lblTileWaitTime.Text = "Tile Delay";
             // 
             // numCapDistBottom
@@ -383,7 +383,7 @@ namespace de.mastersign.mapmap
             0});
             this.numCapDistBottom.Name = "numCapDistBottom";
             this.numCapDistBottom.Size = new System.Drawing.Size(56, 20);
-            this.numCapDistBottom.TabIndex = 9;
+            this.numCapDistBottom.TabIndex = 5;
             this.numCapDistBottom.Value = new decimal(new int[] {
             100,
             0,
@@ -401,7 +401,7 @@ namespace de.mastersign.mapmap
             0});
             this.numCapDistTop.Name = "numCapDistTop";
             this.numCapDistTop.Size = new System.Drawing.Size(56, 20);
-            this.numCapDistTop.TabIndex = 10;
+            this.numCapDistTop.TabIndex = 2;
             this.numCapDistTop.Value = new decimal(new int[] {
             100,
             0,
@@ -419,7 +419,7 @@ namespace de.mastersign.mapmap
             0});
             this.numCapDistRight.Name = "numCapDistRight";
             this.numCapDistRight.Size = new System.Drawing.Size(56, 20);
-            this.numCapDistRight.TabIndex = 11;
+            this.numCapDistRight.TabIndex = 4;
             this.numCapDistRight.Value = new decimal(new int[] {
             100,
             0,
@@ -437,7 +437,7 @@ namespace de.mastersign.mapmap
             0});
             this.numCapDistLeft.Name = "numCapDistLeft";
             this.numCapDistLeft.Size = new System.Drawing.Size(56, 20);
-            this.numCapDistLeft.TabIndex = 12;
+            this.numCapDistLeft.TabIndex = 3;
             this.numCapDistLeft.Value = new decimal(new int[] {
             100,
             0,
@@ -451,7 +451,7 @@ namespace de.mastersign.mapmap
             this.lblCaptureRegion.Location = new System.Drawing.Point(12, 14);
             this.lblCaptureRegion.Name = "lblCaptureRegion";
             this.lblCaptureRegion.Size = new System.Drawing.Size(81, 13);
-            this.lblCaptureRegion.TabIndex = 8;
+            this.lblCaptureRegion.TabIndex = 0;
             this.lblCaptureRegion.Text = "Capture Region";
             // 
             // lblCaptureRegionRect
@@ -460,7 +460,7 @@ namespace de.mastersign.mapmap
             this.lblCaptureRegionRect.Location = new System.Drawing.Point(98, 22);
             this.lblCaptureRegionRect.Name = "lblCaptureRegionRect";
             this.lblCaptureRegionRect.Size = new System.Drawing.Size(89, 53);
-            this.lblCaptureRegionRect.TabIndex = 13;
+            this.lblCaptureRegionRect.TabIndex = 1;
             // 
             // lblDragRegionSizeLabel
             // 
@@ -469,7 +469,7 @@ namespace de.mastersign.mapmap
             this.lblDragRegionSizeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblDragRegionSizeLabel.Name = "lblDragRegionSizeLabel";
             this.lblDragRegionSizeLabel.Size = new System.Drawing.Size(70, 13);
-            this.lblDragRegionSizeLabel.TabIndex = 14;
+            this.lblDragRegionSizeLabel.TabIndex = 34;
             this.lblDragRegionSizeLabel.Text = "Drag Region:";
             // 
             // lblDragRegionSize
@@ -479,7 +479,7 @@ namespace de.mastersign.mapmap
             this.lblDragRegionSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblDragRegionSize.Name = "lblDragRegionSize";
             this.lblDragRegionSize.Size = new System.Drawing.Size(44, 13);
-            this.lblDragRegionSize.TabIndex = 15;
+            this.lblDragRegionSize.TabIndex = 35;
             this.lblDragRegionSize.Text = "0 x 0 px";
             // 
             // lblCaptureRegionSizeLabel
@@ -489,7 +489,7 @@ namespace de.mastersign.mapmap
             this.lblCaptureRegionSizeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblCaptureRegionSizeLabel.Name = "lblCaptureRegionSizeLabel";
             this.lblCaptureRegionSizeLabel.Size = new System.Drawing.Size(84, 13);
-            this.lblCaptureRegionSizeLabel.TabIndex = 14;
+            this.lblCaptureRegionSizeLabel.TabIndex = 32;
             this.lblCaptureRegionSizeLabel.Text = "Capture Region:";
             // 
             // lblCaptureRegionSize
@@ -499,7 +499,7 @@ namespace de.mastersign.mapmap
             this.lblCaptureRegionSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblCaptureRegionSize.Name = "lblCaptureRegionSize";
             this.lblCaptureRegionSize.Size = new System.Drawing.Size(44, 13);
-            this.lblCaptureRegionSize.TabIndex = 15;
+            this.lblCaptureRegionSize.TabIndex = 33;
             this.lblCaptureRegionSize.Text = "0 x 0 px";
             // 
             // lblDragStepsLabel
@@ -509,7 +509,7 @@ namespace de.mastersign.mapmap
             this.lblDragStepsLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblDragStepsLabel.Name = "lblDragStepsLabel";
             this.lblDragStepsLabel.Size = new System.Drawing.Size(65, 13);
-            this.lblDragStepsLabel.TabIndex = 14;
+            this.lblDragStepsLabel.TabIndex = 36;
             this.lblDragStepsLabel.Text = "Steps/Drag:";
             // 
             // lblDragSteps
@@ -519,7 +519,7 @@ namespace de.mastersign.mapmap
             this.lblDragSteps.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblDragSteps.Name = "lblDragSteps";
             this.lblDragSteps.Size = new System.Drawing.Size(30, 13);
-            this.lblDragSteps.TabIndex = 15;
+            this.lblDragSteps.TabIndex = 37;
             this.lblDragSteps.Text = "0 x 0";
             // 
             // lblTotalTimeLabel
@@ -529,7 +529,7 @@ namespace de.mastersign.mapmap
             this.lblTotalTimeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblTotalTimeLabel.Name = "lblTotalTimeLabel";
             this.lblTotalTimeLabel.Size = new System.Drawing.Size(60, 13);
-            this.lblTotalTimeLabel.TabIndex = 14;
+            this.lblTotalTimeLabel.TabIndex = 40;
             this.lblTotalTimeLabel.Text = "Total Time:";
             // 
             // lblTotalTime
@@ -539,7 +539,7 @@ namespace de.mastersign.mapmap
             this.lblTotalTime.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblTotalTime.Name = "lblTotalTime";
             this.lblTotalTime.Size = new System.Drawing.Size(43, 13);
-            this.lblTotalTime.TabIndex = 15;
+            this.lblTotalTime.TabIndex = 41;
             this.lblTotalTime.Text = "0:00:00";
             // 
             // lblTotalSizeLabel
@@ -549,7 +549,7 @@ namespace de.mastersign.mapmap
             this.lblTotalSizeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblTotalSizeLabel.Name = "lblTotalSizeLabel";
             this.lblTotalSizeLabel.Size = new System.Drawing.Size(57, 13);
-            this.lblTotalSizeLabel.TabIndex = 14;
+            this.lblTotalSizeLabel.TabIndex = 38;
             this.lblTotalSizeLabel.Text = "Total Size:";
             // 
             // lblTotalSize
@@ -559,7 +559,7 @@ namespace de.mastersign.mapmap
             this.lblTotalSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblTotalSize.Name = "lblTotalSize";
             this.lblTotalSize.Size = new System.Drawing.Size(44, 13);
-            this.lblTotalSize.TabIndex = 15;
+            this.lblTotalSize.TabIndex = 39;
             this.lblTotalSize.Text = "0 x 0 px";
             // 
             // saveFileDialog
@@ -573,7 +573,7 @@ namespace de.mastersign.mapmap
             this.lblStartWaitTime1.Location = new System.Drawing.Point(12, 418);
             this.lblStartWaitTime1.Name = "lblStartWaitTime1";
             this.lblStartWaitTime1.Size = new System.Drawing.Size(73, 13);
-            this.lblStartWaitTime1.TabIndex = 3;
+            this.lblStartWaitTime1.TabIndex = 28;
             this.lblStartWaitTime1.Text = "Prestart Delay";
             // 
             // numStartWaitTime1
@@ -597,7 +597,7 @@ namespace de.mastersign.mapmap
             196608});
             this.numStartWaitTime1.Name = "numStartWaitTime1";
             this.numStartWaitTime1.Size = new System.Drawing.Size(56, 20);
-            this.numStartWaitTime1.TabIndex = 7;
+            this.numStartWaitTime1.TabIndex = 29;
             this.numStartWaitTime1.Value = new decimal(new int[] {
             4,
             0,
@@ -645,7 +645,7 @@ namespace de.mastersign.mapmap
             this.pictureBox.ShowZoomLevelTools = true;
             this.pictureBox.Size = new System.Drawing.Size(475, 361);
             this.pictureBox.SuppressInterpolation = true;
-            this.pictureBox.TabIndex = 16;
+            this.pictureBox.TabIndex = 48;
             this.pictureBox.WaitAnimationInterval = 50;
             this.pictureBox.WaitingAnimation = false;
             this.pictureBox.WaitingAnimationBlend = false;
@@ -660,7 +660,7 @@ namespace de.mastersign.mapmap
             this.btnSave.Location = new System.Drawing.Point(599, 43);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(60, 25);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 45;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.UseVisualStyleBackColor = true;
@@ -672,7 +672,7 @@ namespace de.mastersign.mapmap
             this.radMouseControl.Location = new System.Drawing.Point(15, 150);
             this.radMouseControl.Name = "radMouseControl";
             this.radMouseControl.Size = new System.Drawing.Size(93, 17);
-            this.radMouseControl.TabIndex = 17;
+            this.radMouseControl.TabIndex = 10;
             this.radMouseControl.Text = "Mouse Control";
             this.radMouseControl.UseVisualStyleBackColor = true;
             this.radMouseControl.CheckedChanged += new System.EventHandler(this.ValueChangeHandler);
@@ -684,7 +684,7 @@ namespace de.mastersign.mapmap
             this.radKeyboardControl.Location = new System.Drawing.Point(12, 285);
             this.radKeyboardControl.Name = "radKeyboardControl";
             this.radKeyboardControl.Size = new System.Drawing.Size(106, 17);
-            this.radKeyboardControl.TabIndex = 17;
+            this.radKeyboardControl.TabIndex = 19;
             this.radKeyboardControl.TabStop = true;
             this.radKeyboardControl.Text = "Keyboard Control";
             this.radKeyboardControl.UseVisualStyleBackColor = true;
@@ -705,7 +705,7 @@ namespace de.mastersign.mapmap
             0});
             this.numKeyStepX.Name = "numKeyStepX";
             this.numKeyStepX.Size = new System.Drawing.Size(56, 20);
-            this.numKeyStepX.TabIndex = 1;
+            this.numKeyStepX.TabIndex = 21;
             this.numKeyStepX.Value = new decimal(new int[] {
             80,
             0,
@@ -728,7 +728,7 @@ namespace de.mastersign.mapmap
             0});
             this.numKeyStepY.Name = "numKeyStepY";
             this.numKeyStepY.Size = new System.Drawing.Size(56, 20);
-            this.numKeyStepY.TabIndex = 2;
+            this.numKeyStepY.TabIndex = 23;
             this.numKeyStepY.Value = new decimal(new int[] {
             80,
             0,
@@ -742,7 +742,7 @@ namespace de.mastersign.mapmap
             this.lblKeyStepX.Location = new System.Drawing.Point(12, 310);
             this.lblKeyStepX.Name = "lblKeyStepX";
             this.lblKeyStepX.Size = new System.Drawing.Size(57, 13);
-            this.lblKeyStepX.TabIndex = 3;
+            this.lblKeyStepX.TabIndex = 20;
             this.lblKeyStepX.Text = "Stepsize X";
             // 
             // lblKeyStepY
@@ -751,7 +751,7 @@ namespace de.mastersign.mapmap
             this.lblKeyStepY.Location = new System.Drawing.Point(12, 334);
             this.lblKeyStepY.Name = "lblKeyStepY";
             this.lblKeyStepY.Size = new System.Drawing.Size(57, 13);
-            this.lblKeyStepY.TabIndex = 3;
+            this.lblKeyStepY.TabIndex = 22;
             this.lblKeyStepY.Text = "Stepsize Y";
             // 
             // lblStartWaitTime2
@@ -760,7 +760,7 @@ namespace de.mastersign.mapmap
             this.lblStartWaitTime2.Location = new System.Drawing.Point(12, 442);
             this.lblStartWaitTime2.Name = "lblStartWaitTime2";
             this.lblStartWaitTime2.Size = new System.Drawing.Size(59, 13);
-            this.lblStartWaitTime2.TabIndex = 3;
+            this.lblStartWaitTime2.TabIndex = 30;
             this.lblStartWaitTime2.Text = "Start Delay";
             // 
             // numStartWaitTime2
@@ -784,7 +784,7 @@ namespace de.mastersign.mapmap
             196608});
             this.numStartWaitTime2.Name = "numStartWaitTime2";
             this.numStartWaitTime2.Size = new System.Drawing.Size(56, 20);
-            this.numStartWaitTime2.TabIndex = 7;
+            this.numStartWaitTime2.TabIndex = 31;
             this.numStartWaitTime2.Value = new decimal(new int[] {
             4,
             0,
@@ -800,7 +800,7 @@ namespace de.mastersign.mapmap
             this.chkReturnToStart.Location = new System.Drawing.Point(455, 51);
             this.chkReturnToStart.Name = "chkReturnToStart";
             this.chkReturnToStart.Size = new System.Drawing.Size(119, 17);
-            this.chkReturnToStart.TabIndex = 18;
+            this.chkReturnToStart.TabIndex = 42;
             this.chkReturnToStart.Text = "Return to start point";
             this.chkReturnToStart.UseVisualStyleBackColor = true;
             // 
@@ -811,7 +811,7 @@ namespace de.mastersign.mapmap
             this.lblCancelationHint.Margin = new System.Windows.Forms.Padding(3);
             this.lblCancelationHint.Name = "lblCancelationHint";
             this.lblCancelationHint.Size = new System.Drawing.Size(332, 13);
-            this.lblCancelationHint.TabIndex = 19;
+            this.lblCancelationHint.TabIndex = 43;
             this.lblCancelationHint.Text = "Press and hold the ALT modifier key to cancel the capturing process.";
             // 
             // btnAbout
@@ -821,7 +821,7 @@ namespace de.mastersign.mapmap
             this.btnAbout.Location = new System.Drawing.Point(665, 12);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(27, 25);
-            this.btnAbout.TabIndex = 0;
+            this.btnAbout.TabIndex = 46;
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
@@ -832,7 +832,7 @@ namespace de.mastersign.mapmap
             this.btnHelp.Location = new System.Drawing.Point(665, 43);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(27, 25);
-            this.btnHelp.TabIndex = 0;
+            this.btnHelp.TabIndex = 47;
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
