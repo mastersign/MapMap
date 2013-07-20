@@ -67,8 +67,8 @@ namespace MapMap
             this.lblTotalSizeLabel = new System.Windows.Forms.Label();
             this.lblTotalSize = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.lblStartWaitTime = new System.Windows.Forms.Label();
-            this.numStartWaitTime = new System.Windows.Forms.NumericUpDown();
+            this.lblStartWaitTime1 = new System.Windows.Forms.Label();
+            this.numStartWaitTime1 = new System.Windows.Forms.NumericUpDown();
             this.pictureBox = new de.mastersign.controls.ZoomPictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.radMouseControl = new System.Windows.Forms.RadioButton();
@@ -77,6 +77,8 @@ namespace MapMap
             this.numKeyStepY = new System.Windows.Forms.NumericUpDown();
             this.lblKeyStepX = new System.Windows.Forms.Label();
             this.lblKeyStepY = new System.Windows.Forms.Label();
+            this.lblStartWaitTime2 = new System.Windows.Forms.Label();
+            this.numStartWaitTime2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistLeft)).BeginInit();
@@ -90,15 +92,16 @@ namespace MapMap
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.Location = new System.Drawing.Point(535, 12);
+            this.btnStart.Location = new System.Drawing.Point(543, 12);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(88, 25);
             this.btnStart.TabIndex = 0;
@@ -108,7 +111,7 @@ namespace MapMap
             // 
             // numTilesX
             // 
-            this.numTilesX.Location = new System.Drawing.Point(106, 90);
+            this.numTilesX.Location = new System.Drawing.Point(114, 90);
             this.numTilesX.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -131,7 +134,7 @@ namespace MapMap
             // 
             // numTilesY
             // 
-            this.numTilesY.Location = new System.Drawing.Point(106, 114);
+            this.numTilesY.Location = new System.Drawing.Point(114, 114);
             this.numTilesY.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -157,22 +160,22 @@ namespace MapMap
             this.lblTilesX.AutoSize = true;
             this.lblTilesX.Location = new System.Drawing.Point(12, 92);
             this.lblTilesX.Name = "lblTilesX";
-            this.lblTilesX.Size = new System.Drawing.Size(73, 13);
+            this.lblTilesX.Size = new System.Drawing.Size(56, 13);
             this.lblTilesX.TabIndex = 3;
-            this.lblTilesX.Text = "Kacheln (hor.)";
+            this.lblTilesX.Text = "Tiles (hor.)";
             // 
             // lblTilesY
             // 
             this.lblTilesY.AutoSize = true;
             this.lblTilesY.Location = new System.Drawing.Point(12, 116);
             this.lblTilesY.Name = "lblTilesY";
-            this.lblTilesY.Size = new System.Drawing.Size(76, 13);
+            this.lblTilesY.Size = new System.Drawing.Size(59, 13);
             this.lblTilesY.TabIndex = 3;
-            this.lblTilesY.Text = "Kacheln (vert.)";
+            this.lblTilesY.Text = "Tiles (vert.)";
             // 
             // numDragDistLeft
             // 
-            this.numDragDistLeft.Location = new System.Drawing.Point(75, 199);
+            this.numDragDistLeft.Location = new System.Drawing.Point(83, 199);
             this.numDragDistLeft.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -193,13 +196,13 @@ namespace MapMap
             this.lblDragRegion.AutoSize = true;
             this.lblDragRegion.Location = new System.Drawing.Point(12, 175);
             this.lblDragRegion.Name = "lblDragRegion";
-            this.lblDragRegion.Size = new System.Drawing.Size(69, 13);
+            this.lblDragRegion.Size = new System.Drawing.Size(67, 13);
             this.lblDragRegion.TabIndex = 3;
-            this.lblDragRegion.Text = "Drag-Bereich";
+            this.lblDragRegion.Text = "Drag Region";
             // 
             // numDragDistTop
             // 
-            this.numDragDistTop.Location = new System.Drawing.Point(106, 173);
+            this.numDragDistTop.Location = new System.Drawing.Point(114, 173);
             this.numDragDistTop.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -217,7 +220,7 @@ namespace MapMap
             // 
             // numDragDistRight
             // 
-            this.numDragDistRight.Location = new System.Drawing.Point(137, 199);
+            this.numDragDistRight.Location = new System.Drawing.Point(145, 199);
             this.numDragDistRight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -235,7 +238,7 @@ namespace MapMap
             // 
             // numDragDistBottom
             // 
-            this.numDragDistBottom.Location = new System.Drawing.Point(106, 225);
+            this.numDragDistBottom.Location = new System.Drawing.Point(114, 225);
             this.numDragDistBottom.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -254,14 +257,14 @@ namespace MapMap
             // lblDragRegionRect
             // 
             this.lblDragRegionRect.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lblDragRegionRect.Location = new System.Drawing.Point(90, 183);
+            this.lblDragRegionRect.Location = new System.Drawing.Point(98, 183);
             this.lblDragRegionRect.Name = "lblDragRegionRect";
             this.lblDragRegionRect.Size = new System.Drawing.Size(89, 53);
             this.lblDragRegionRect.TabIndex = 6;
             // 
             // numDragStepSize
             // 
-            this.numDragStepSize.Location = new System.Drawing.Point(106, 251);
+            this.numDragStepSize.Location = new System.Drawing.Point(114, 251);
             this.numDragStepSize.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -282,22 +285,22 @@ namespace MapMap
             this.lblDragStepSize.AutoSize = true;
             this.lblDragStepSize.Location = new System.Drawing.Point(12, 253);
             this.lblDragStepSize.Name = "lblDragStepSize";
-            this.lblDragStepSize.Size = new System.Drawing.Size(64, 13);
+            this.lblDragStepSize.Size = new System.Drawing.Size(47, 13);
             this.lblDragStepSize.TabIndex = 3;
-            this.lblDragStepSize.Text = "Schrittgröße";
+            this.lblDragStepSize.Text = "Stepsize";
             // 
             // lblDragStepTime
             // 
             this.lblDragStepTime.AutoSize = true;
             this.lblDragStepTime.Location = new System.Drawing.Point(12, 394);
             this.lblDragStepTime.Name = "lblDragStepTime";
-            this.lblDragStepTime.Size = new System.Drawing.Size(79, 13);
+            this.lblDragStepTime.Size = new System.Drawing.Size(59, 13);
             this.lblDragStepTime.TabIndex = 3;
-            this.lblDragStepTime.Text = "Schrittwartezeit";
+            this.lblDragStepTime.Text = "Step Delay";
             // 
             // numDragStepTime
             // 
-            this.numDragStepTime.Location = new System.Drawing.Point(106, 392);
+            this.numDragStepTime.Location = new System.Drawing.Point(114, 392);
             this.numDragStepTime.Maximum = new decimal(new int[] {
             2000,
             0,
@@ -320,7 +323,7 @@ namespace MapMap
             // 
             // numTileWaitTime
             // 
-            this.numTileWaitTime.Location = new System.Drawing.Point(106, 368);
+            this.numTileWaitTime.Location = new System.Drawing.Point(114, 368);
             this.numTileWaitTime.Maximum = new decimal(new int[] {
             20000,
             0,
@@ -346,13 +349,13 @@ namespace MapMap
             this.lblTileWaitTime.AutoSize = true;
             this.lblTileWaitTime.Location = new System.Drawing.Point(12, 370);
             this.lblTileWaitTime.Name = "lblTileWaitTime";
-            this.lblTileWaitTime.Size = new System.Drawing.Size(82, 13);
+            this.lblTileWaitTime.Size = new System.Drawing.Size(54, 13);
             this.lblTileWaitTime.TabIndex = 3;
-            this.lblTileWaitTime.Text = "Kachelwartezeit";
+            this.lblTileWaitTime.Text = "Tile Delay";
             // 
             // numCapDistBottom
             // 
-            this.numCapDistBottom.Location = new System.Drawing.Point(106, 64);
+            this.numCapDistBottom.Location = new System.Drawing.Point(114, 64);
             this.numCapDistBottom.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -370,7 +373,7 @@ namespace MapMap
             // 
             // numCapDistTop
             // 
-            this.numCapDistTop.Location = new System.Drawing.Point(106, 12);
+            this.numCapDistTop.Location = new System.Drawing.Point(114, 12);
             this.numCapDistTop.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -388,7 +391,7 @@ namespace MapMap
             // 
             // numCapDistRight
             // 
-            this.numCapDistRight.Location = new System.Drawing.Point(137, 38);
+            this.numCapDistRight.Location = new System.Drawing.Point(145, 38);
             this.numCapDistRight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -406,7 +409,7 @@ namespace MapMap
             // 
             // numCapDistLeft
             // 
-            this.numCapDistLeft.Location = new System.Drawing.Point(75, 38);
+            this.numCapDistLeft.Location = new System.Drawing.Point(83, 38);
             this.numCapDistLeft.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -427,14 +430,14 @@ namespace MapMap
             this.lblCaptureRegion.AutoSize = true;
             this.lblCaptureRegion.Location = new System.Drawing.Point(12, 14);
             this.lblCaptureRegion.Name = "lblCaptureRegion";
-            this.lblCaptureRegion.Size = new System.Drawing.Size(75, 13);
+            this.lblCaptureRegion.Size = new System.Drawing.Size(81, 13);
             this.lblCaptureRegion.TabIndex = 8;
-            this.lblCaptureRegion.Text = "Kachelbereich";
+            this.lblCaptureRegion.Text = "Capture Region";
             // 
             // lblCaptureRegionRect
             // 
             this.lblCaptureRegionRect.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lblCaptureRegionRect.Location = new System.Drawing.Point(90, 22);
+            this.lblCaptureRegionRect.Location = new System.Drawing.Point(98, 22);
             this.lblCaptureRegionRect.Name = "lblCaptureRegionRect";
             this.lblCaptureRegionRect.Size = new System.Drawing.Size(89, 53);
             this.lblCaptureRegionRect.TabIndex = 13;
@@ -442,17 +445,17 @@ namespace MapMap
             // lblDragRegionSizeLabel
             // 
             this.lblDragRegionSizeLabel.AutoSize = true;
-            this.lblDragRegionSizeLabel.Location = new System.Drawing.Point(206, 33);
+            this.lblDragRegionSizeLabel.Location = new System.Drawing.Point(214, 33);
             this.lblDragRegionSizeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblDragRegionSizeLabel.Name = "lblDragRegionSizeLabel";
-            this.lblDragRegionSizeLabel.Size = new System.Drawing.Size(72, 13);
+            this.lblDragRegionSizeLabel.Size = new System.Drawing.Size(70, 13);
             this.lblDragRegionSizeLabel.TabIndex = 14;
-            this.lblDragRegionSizeLabel.Text = "Drag-Bereich:";
+            this.lblDragRegionSizeLabel.Text = "Drag Region:";
             // 
             // lblDragRegionSize
             // 
             this.lblDragRegionSize.AutoSize = true;
-            this.lblDragRegionSize.Location = new System.Drawing.Point(289, 33);
+            this.lblDragRegionSize.Location = new System.Drawing.Point(297, 33);
             this.lblDragRegionSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblDragRegionSize.Name = "lblDragRegionSize";
             this.lblDragRegionSize.Size = new System.Drawing.Size(44, 13);
@@ -462,17 +465,17 @@ namespace MapMap
             // lblCaptureRegionSizeLabel
             // 
             this.lblCaptureRegionSizeLabel.AutoSize = true;
-            this.lblCaptureRegionSizeLabel.Location = new System.Drawing.Point(206, 14);
+            this.lblCaptureRegionSizeLabel.Location = new System.Drawing.Point(214, 14);
             this.lblCaptureRegionSizeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblCaptureRegionSizeLabel.Name = "lblCaptureRegionSizeLabel";
-            this.lblCaptureRegionSizeLabel.Size = new System.Drawing.Size(70, 13);
+            this.lblCaptureRegionSizeLabel.Size = new System.Drawing.Size(84, 13);
             this.lblCaptureRegionSizeLabel.TabIndex = 14;
-            this.lblCaptureRegionSizeLabel.Text = "Kachelgröße:";
+            this.lblCaptureRegionSizeLabel.Text = "Cpature Region:";
             // 
             // lblCaptureRegionSize
             // 
             this.lblCaptureRegionSize.AutoSize = true;
-            this.lblCaptureRegionSize.Location = new System.Drawing.Point(289, 14);
+            this.lblCaptureRegionSize.Location = new System.Drawing.Point(297, 14);
             this.lblCaptureRegionSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblCaptureRegionSize.Name = "lblCaptureRegionSize";
             this.lblCaptureRegionSize.Size = new System.Drawing.Size(44, 13);
@@ -482,17 +485,17 @@ namespace MapMap
             // lblDragStepsLabel
             // 
             this.lblDragStepsLabel.AutoSize = true;
-            this.lblDragStepsLabel.Location = new System.Drawing.Point(206, 52);
+            this.lblDragStepsLabel.Location = new System.Drawing.Point(214, 52);
             this.lblDragStepsLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblDragStepsLabel.Name = "lblDragStepsLabel";
-            this.lblDragStepsLabel.Size = new System.Drawing.Size(83, 13);
+            this.lblDragStepsLabel.Size = new System.Drawing.Size(65, 13);
             this.lblDragStepsLabel.TabIndex = 14;
-            this.lblDragStepsLabel.Text = "Schritte je Drag:";
+            this.lblDragStepsLabel.Text = "Steps/Drag:";
             // 
             // lblDragSteps
             // 
             this.lblDragSteps.AutoSize = true;
-            this.lblDragSteps.Location = new System.Drawing.Point(289, 52);
+            this.lblDragSteps.Location = new System.Drawing.Point(297, 52);
             this.lblDragSteps.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblDragSteps.Name = "lblDragSteps";
             this.lblDragSteps.Size = new System.Drawing.Size(30, 13);
@@ -502,17 +505,17 @@ namespace MapMap
             // lblTotalTimeLabel
             // 
             this.lblTotalTimeLabel.AutoSize = true;
-            this.lblTotalTimeLabel.Location = new System.Drawing.Point(371, 33);
+            this.lblTotalTimeLabel.Location = new System.Drawing.Point(379, 33);
             this.lblTotalTimeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblTotalTimeLabel.Name = "lblTotalTimeLabel";
-            this.lblTotalTimeLabel.Size = new System.Drawing.Size(62, 13);
+            this.lblTotalTimeLabel.Size = new System.Drawing.Size(60, 13);
             this.lblTotalTimeLabel.TabIndex = 14;
-            this.lblTotalTimeLabel.Text = "Gesamtzeit:";
+            this.lblTotalTimeLabel.Text = "Total Time:";
             // 
             // lblTotalTime
             // 
             this.lblTotalTime.AutoSize = true;
-            this.lblTotalTime.Location = new System.Drawing.Point(444, 33);
+            this.lblTotalTime.Location = new System.Drawing.Point(452, 33);
             this.lblTotalTime.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblTotalTime.Name = "lblTotalTime";
             this.lblTotalTime.Size = new System.Drawing.Size(33, 13);
@@ -522,17 +525,17 @@ namespace MapMap
             // lblTotalSizeLabel
             // 
             this.lblTotalSizeLabel.AutoSize = true;
-            this.lblTotalSizeLabel.Location = new System.Drawing.Point(371, 14);
+            this.lblTotalSizeLabel.Location = new System.Drawing.Point(379, 14);
             this.lblTotalSizeLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblTotalSizeLabel.Name = "lblTotalSizeLabel";
-            this.lblTotalSizeLabel.Size = new System.Drawing.Size(73, 13);
+            this.lblTotalSizeLabel.Size = new System.Drawing.Size(57, 13);
             this.lblTotalSizeLabel.TabIndex = 14;
-            this.lblTotalSizeLabel.Text = "Gesamtgröße:";
+            this.lblTotalSizeLabel.Text = "Total Size:";
             // 
             // lblTotalSize
             // 
             this.lblTotalSize.AutoSize = true;
-            this.lblTotalSize.Location = new System.Drawing.Point(444, 14);
+            this.lblTotalSize.Location = new System.Drawing.Point(452, 14);
             this.lblTotalSize.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblTotalSize.Name = "lblTotalSize";
             this.lblTotalSize.Size = new System.Drawing.Size(44, 13);
@@ -544,37 +547,37 @@ namespace MapMap
             this.saveFileDialog.DefaultExt = "png";
             this.saveFileDialog.Filter = "PNG Bilddatei (*.png)|*.png";
             // 
-            // lblStartWaitTime
+            // lblStartWaitTime1
             // 
-            this.lblStartWaitTime.AutoSize = true;
-            this.lblStartWaitTime.Location = new System.Drawing.Point(12, 418);
-            this.lblStartWaitTime.Name = "lblStartWaitTime";
-            this.lblStartWaitTime.Size = new System.Drawing.Size(71, 13);
-            this.lblStartWaitTime.TabIndex = 3;
-            this.lblStartWaitTime.Text = "Startwartezeit";
+            this.lblStartWaitTime1.AutoSize = true;
+            this.lblStartWaitTime1.Location = new System.Drawing.Point(12, 418);
+            this.lblStartWaitTime1.Name = "lblStartWaitTime1";
+            this.lblStartWaitTime1.Size = new System.Drawing.Size(73, 13);
+            this.lblStartWaitTime1.TabIndex = 3;
+            this.lblStartWaitTime1.Text = "Prestart Delay";
             // 
-            // numStartWaitTime
+            // numStartWaitTime1
             // 
-            this.numStartWaitTime.Location = new System.Drawing.Point(106, 416);
-            this.numStartWaitTime.Maximum = new decimal(new int[] {
+            this.numStartWaitTime1.Location = new System.Drawing.Point(114, 416);
+            this.numStartWaitTime1.Maximum = new decimal(new int[] {
             20000,
             0,
             0,
             0});
-            this.numStartWaitTime.Minimum = new decimal(new int[] {
+            this.numStartWaitTime1.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numStartWaitTime.Name = "numStartWaitTime";
-            this.numStartWaitTime.Size = new System.Drawing.Size(56, 20);
-            this.numStartWaitTime.TabIndex = 7;
-            this.numStartWaitTime.Value = new decimal(new int[] {
-            6000,
+            this.numStartWaitTime1.Name = "numStartWaitTime1";
+            this.numStartWaitTime1.Size = new System.Drawing.Size(56, 20);
+            this.numStartWaitTime1.TabIndex = 7;
+            this.numStartWaitTime1.Value = new decimal(new int[] {
+            100,
             0,
             0,
             0});
-            this.numStartWaitTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
+            this.numStartWaitTime1.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // pictureBox
             // 
@@ -603,7 +606,7 @@ namespace MapMap
             this.pictureBox.InfoForegroundColor = System.Drawing.SystemColors.WindowText;
             this.pictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
             this.pictureBox.IsBoundToMaster = false;
-            this.pictureBox.Location = new System.Drawing.Point(209, 75);
+            this.pictureBox.Location = new System.Drawing.Point(217, 75);
             this.pictureBox.Master = null;
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.OrientationBackgroundColor = System.Drawing.SystemColors.Window;
@@ -614,7 +617,7 @@ namespace MapMap
             this.pictureBox.ShowRotationTools = false;
             this.pictureBox.ShowSelectionTools = false;
             this.pictureBox.ShowZoomLevelTools = true;
-            this.pictureBox.Size = new System.Drawing.Size(414, 365);
+            this.pictureBox.Size = new System.Drawing.Size(414, 385);
             this.pictureBox.SuppressInterpolation = true;
             this.pictureBox.TabIndex = 16;
             this.pictureBox.WaitAnimationInterval = 50;
@@ -626,11 +629,11 @@ namespace MapMap
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(535, 43);
+            this.btnSave.Location = new System.Drawing.Point(543, 43);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 25);
             this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Speichern";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -639,9 +642,9 @@ namespace MapMap
             this.radMouseControl.AutoSize = true;
             this.radMouseControl.Location = new System.Drawing.Point(15, 150);
             this.radMouseControl.Name = "radMouseControl";
-            this.radMouseControl.Size = new System.Drawing.Size(98, 17);
+            this.radMouseControl.Size = new System.Drawing.Size(93, 17);
             this.radMouseControl.TabIndex = 17;
-            this.radMouseControl.Text = "Maussteuerung";
+            this.radMouseControl.Text = "Mouse Control";
             this.radMouseControl.UseVisualStyleBackColor = true;
             this.radMouseControl.CheckedChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
@@ -651,16 +654,16 @@ namespace MapMap
             this.radKeyboardControl.Checked = true;
             this.radKeyboardControl.Location = new System.Drawing.Point(12, 285);
             this.radKeyboardControl.Name = "radKeyboardControl";
-            this.radKeyboardControl.Size = new System.Drawing.Size(111, 17);
+            this.radKeyboardControl.Size = new System.Drawing.Size(106, 17);
             this.radKeyboardControl.TabIndex = 17;
             this.radKeyboardControl.TabStop = true;
-            this.radKeyboardControl.Text = "Tastatursteuerung";
+            this.radKeyboardControl.Text = "Keyboard Control";
             this.radKeyboardControl.UseVisualStyleBackColor = true;
             this.radKeyboardControl.CheckedChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // numKeyStepX
             // 
-            this.numKeyStepX.Location = new System.Drawing.Point(106, 308);
+            this.numKeyStepX.Location = new System.Drawing.Point(114, 308);
             this.numKeyStepX.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -683,7 +686,7 @@ namespace MapMap
             // 
             // numKeyStepY
             // 
-            this.numKeyStepY.Location = new System.Drawing.Point(106, 332);
+            this.numKeyStepY.Location = new System.Drawing.Point(114, 332);
             this.numKeyStepY.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -709,24 +712,56 @@ namespace MapMap
             this.lblKeyStepX.AutoSize = true;
             this.lblKeyStepX.Location = new System.Drawing.Point(12, 310);
             this.lblKeyStepX.Name = "lblKeyStepX";
-            this.lblKeyStepX.Size = new System.Drawing.Size(74, 13);
+            this.lblKeyStepX.Size = new System.Drawing.Size(57, 13);
             this.lblKeyStepX.TabIndex = 3;
-            this.lblKeyStepX.Text = "Schrittgröße X";
+            this.lblKeyStepX.Text = "Stepsize X";
             // 
             // lblKeyStepY
             // 
             this.lblKeyStepY.AutoSize = true;
             this.lblKeyStepY.Location = new System.Drawing.Point(12, 334);
             this.lblKeyStepY.Name = "lblKeyStepY";
-            this.lblKeyStepY.Size = new System.Drawing.Size(74, 13);
+            this.lblKeyStepY.Size = new System.Drawing.Size(57, 13);
             this.lblKeyStepY.TabIndex = 3;
-            this.lblKeyStepY.Text = "Schrittgröße Y";
+            this.lblKeyStepY.Text = "Stepsize Y";
+            // 
+            // lblStartWaitTime2
+            // 
+            this.lblStartWaitTime2.AutoSize = true;
+            this.lblStartWaitTime2.Location = new System.Drawing.Point(12, 442);
+            this.lblStartWaitTime2.Name = "lblStartWaitTime2";
+            this.lblStartWaitTime2.Size = new System.Drawing.Size(59, 13);
+            this.lblStartWaitTime2.TabIndex = 3;
+            this.lblStartWaitTime2.Text = "Start Delay";
+            // 
+            // numStartWaitTime2
+            // 
+            this.numStartWaitTime2.Location = new System.Drawing.Point(114, 440);
+            this.numStartWaitTime2.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.numStartWaitTime2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numStartWaitTime2.Name = "numStartWaitTime2";
+            this.numStartWaitTime2.Size = new System.Drawing.Size(56, 20);
+            this.numStartWaitTime2.TabIndex = 7;
+            this.numStartWaitTime2.Value = new decimal(new int[] {
+            4000,
+            0,
+            0,
+            0});
+            this.numStartWaitTime2.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 452);
+            this.ClientSize = new System.Drawing.Size(643, 472);
             this.Controls.Add(this.radKeyboardControl);
             this.Controls.Add(this.radMouseControl);
             this.Controls.Add(this.lblCaptureRegionSize);
@@ -745,13 +780,15 @@ namespace MapMap
             this.Controls.Add(this.numCapDistLeft);
             this.Controls.Add(this.lblCaptureRegion);
             this.Controls.Add(this.lblCaptureRegionRect);
-            this.Controls.Add(this.numStartWaitTime);
+            this.Controls.Add(this.numStartWaitTime2);
+            this.Controls.Add(this.numStartWaitTime1);
             this.Controls.Add(this.numTileWaitTime);
             this.Controls.Add(this.numDragStepTime);
             this.Controls.Add(this.numDragStepSize);
             this.Controls.Add(this.numDragDistBottom);
+            this.Controls.Add(this.lblStartWaitTime2);
             this.Controls.Add(this.numDragDistTop);
-            this.Controls.Add(this.lblStartWaitTime);
+            this.Controls.Add(this.lblStartWaitTime1);
             this.Controls.Add(this.numDragDistRight);
             this.Controls.Add(this.lblTileWaitTime);
             this.Controls.Add(this.lblDragStepTime);
@@ -770,7 +807,8 @@ namespace MapMap
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblDragRegionRect);
             this.Controls.Add(this.pictureBox);
-            this.MinimumSize = new System.Drawing.Size(650, 490);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(650, 510);
             this.Name = "SettingsForm";
             this.Text = "MapMap";
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).EndInit();
@@ -786,9 +824,10 @@ namespace MapMap
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,8 +869,8 @@ namespace MapMap
         private System.Windows.Forms.Label lblTotalSizeLabel;
         private System.Windows.Forms.Label lblTotalSize;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.Label lblStartWaitTime;
-        private System.Windows.Forms.NumericUpDown numStartWaitTime;
+        private System.Windows.Forms.Label lblStartWaitTime1;
+        private System.Windows.Forms.NumericUpDown numStartWaitTime1;
         private de.mastersign.controls.ZoomPictureBox pictureBox;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.RadioButton radMouseControl;
@@ -840,6 +879,8 @@ namespace MapMap
         private System.Windows.Forms.NumericUpDown numKeyStepY;
         private System.Windows.Forms.Label lblKeyStepX;
         private System.Windows.Forms.Label lblKeyStepY;
+        private System.Windows.Forms.Label lblStartWaitTime2;
+        private System.Windows.Forms.NumericUpDown numStartWaitTime2;
     }
 }
 

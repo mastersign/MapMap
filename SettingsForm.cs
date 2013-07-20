@@ -97,7 +97,7 @@ namespace MapMap
 
         private int TileWaitTime { get { return (int)numTileWaitTime.Value; } }
 
-        private int StartWaitTime { get { return (int)numStartWaitTime.Value; } }
+        private int StartWaitTime { get { return (int)numStartWaitTime1.Value; } }
 
         private void ValueChangeHandler(object sender, EventArgs e)
         {
