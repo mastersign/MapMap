@@ -101,9 +101,9 @@ namespace MapMap
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.Location = new System.Drawing.Point(543, 12);
+            this.btnStart.Location = new System.Drawing.Point(551, 12);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(88, 25);
+            this.btnStart.Size = new System.Drawing.Size(80, 25);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -300,9 +300,15 @@ namespace MapMap
             // 
             // numDragStepTime
             // 
+            this.numDragStepTime.DecimalPlaces = 3;
+            this.numDragStepTime.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.numDragStepTime.Location = new System.Drawing.Point(114, 392);
             this.numDragStepTime.Maximum = new decimal(new int[] {
-            2000,
+            60,
             0,
             0,
             0});
@@ -310,7 +316,7 @@ namespace MapMap
             1,
             0,
             0,
-            0});
+            196608});
             this.numDragStepTime.Name = "numDragStepTime";
             this.numDragStepTime.Size = new System.Drawing.Size(56, 20);
             this.numDragStepTime.TabIndex = 7;
@@ -318,14 +324,20 @@ namespace MapMap
             65,
             0,
             0,
-            0});
+            196608});
             this.numDragStepTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // numTileWaitTime
             // 
+            this.numTileWaitTime.DecimalPlaces = 3;
+            this.numTileWaitTime.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.numTileWaitTime.Location = new System.Drawing.Point(114, 368);
             this.numTileWaitTime.Maximum = new decimal(new int[] {
-            20000,
+            60,
             0,
             0,
             0});
@@ -333,15 +345,15 @@ namespace MapMap
             1,
             0,
             0,
-            0});
+            196608});
             this.numTileWaitTime.Name = "numTileWaitTime";
             this.numTileWaitTime.Size = new System.Drawing.Size(56, 20);
             this.numTileWaitTime.TabIndex = 7;
             this.numTileWaitTime.Value = new decimal(new int[] {
-            1500,
+            15,
             0,
             0,
-            0});
+            65536});
             this.numTileWaitTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // lblTileWaitTime
@@ -470,7 +482,7 @@ namespace MapMap
             this.lblCaptureRegionSizeLabel.Name = "lblCaptureRegionSizeLabel";
             this.lblCaptureRegionSizeLabel.Size = new System.Drawing.Size(84, 13);
             this.lblCaptureRegionSizeLabel.TabIndex = 14;
-            this.lblCaptureRegionSizeLabel.Text = "Cpature Region:";
+            this.lblCaptureRegionSizeLabel.Text = "Capture Region:";
             // 
             // lblCaptureRegionSize
             // 
@@ -518,9 +530,9 @@ namespace MapMap
             this.lblTotalTime.Location = new System.Drawing.Point(452, 33);
             this.lblTotalTime.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblTotalTime.Name = "lblTotalTime";
-            this.lblTotalTime.Size = new System.Drawing.Size(33, 13);
+            this.lblTotalTime.Size = new System.Drawing.Size(43, 13);
             this.lblTotalTime.TabIndex = 15;
-            this.lblTotalTime.Text = "0 sec";
+            this.lblTotalTime.Text = "0:00:00";
             // 
             // lblTotalSizeLabel
             // 
@@ -558,9 +570,15 @@ namespace MapMap
             // 
             // numStartWaitTime1
             // 
+            this.numStartWaitTime1.DecimalPlaces = 3;
+            this.numStartWaitTime1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.numStartWaitTime1.Location = new System.Drawing.Point(114, 416);
             this.numStartWaitTime1.Maximum = new decimal(new int[] {
-            20000,
+            60,
             0,
             0,
             0});
@@ -568,15 +586,15 @@ namespace MapMap
             1,
             0,
             0,
-            0});
+            196608});
             this.numStartWaitTime1.Name = "numStartWaitTime1";
             this.numStartWaitTime1.Size = new System.Drawing.Size(56, 20);
             this.numStartWaitTime1.TabIndex = 7;
             this.numStartWaitTime1.Value = new decimal(new int[] {
-            100,
+            1,
             0,
             0,
-            0});
+            65536});
             this.numStartWaitTime1.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // pictureBox
@@ -629,9 +647,9 @@ namespace MapMap
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(543, 43);
+            this.btnSave.Location = new System.Drawing.Point(551, 43);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 25);
+            this.btnSave.Size = new System.Drawing.Size(80, 25);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -736,9 +754,15 @@ namespace MapMap
             // 
             // numStartWaitTime2
             // 
+            this.numStartWaitTime2.DecimalPlaces = 3;
+            this.numStartWaitTime2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.numStartWaitTime2.Location = new System.Drawing.Point(114, 440);
             this.numStartWaitTime2.Maximum = new decimal(new int[] {
-            20000,
+            60,
             0,
             0,
             0});
@@ -746,12 +770,12 @@ namespace MapMap
             1,
             0,
             0,
-            0});
+            196608});
             this.numStartWaitTime2.Name = "numStartWaitTime2";
             this.numStartWaitTime2.Size = new System.Drawing.Size(56, 20);
             this.numStartWaitTime2.TabIndex = 7;
             this.numStartWaitTime2.Value = new decimal(new int[] {
-            4000,
+            4,
             0,
             0,
             0});

@@ -45,7 +45,7 @@ namespace MapMap
                     return new Rectangle(
                         tr.Location,
                         new Size(
-                            KeyboardDragStepsX * KeyboardDragStepX, 
+                            KeyboardDragStepsX * KeyboardDragStepX,
                             KeyboardDragStepsY * KeyboardDragStepY));
                 }
                 throw new NotSupportedException();
@@ -74,9 +74,9 @@ namespace MapMap
 
         private int KeyboardDragStepY { get { return (int)numKeyStepY.Value; } }
 
-        private int KeyboardDragStepsY { get { return TileRegion.Height/ KeyboardDragStepY; } }
+        private int KeyboardDragStepsY { get { return TileRegion.Height / KeyboardDragStepY; } }
 
-        private int DragStepTime { get { return (int)numDragStepTime.Value; } }
+        private int DragStepTime { get { return (int)(numDragStepTime.Value * 1000); } }
 
         private int TilesX { get { return (int)numTilesX.Value; } }
 
@@ -95,9 +95,11 @@ namespace MapMap
             }
         }
 
-        private int TileWaitTime { get { return (int)numTileWaitTime.Value; } }
+        private int TileWaitTime { get { return (int)(numTileWaitTime.Value * 1000); } }
 
-        private int StartWaitTime { get { return (int)numStartWaitTime1.Value; } }
+        private int PrestartWaitTime { get { return (int)(numStartWaitTime1.Value * 1000); } }
+
+        private int StartWaitTime { get { return (int)(numStartWaitTime2.Value * 1000); } }
 
         private void ValueChangeHandler(object sender, EventArgs e)
         {
@@ -115,21 +117,23 @@ namespace MapMap
 
             if (radMouseControl.Checked)
             {
-                lblTotalTime.Text = string.Format("{0} sec",
-                    Math.Ceiling(((TilesX*TilesY*TileWaitTime) +
-                                  ((TilesX - 1)*2*(TilesY - 1)*MouseDragStepsX.Count() +
-                                   (TilesY - 1)*MouseDragStepsY.Count())*DragStepTime +
-                                  StartWaitTime)
-                                 /1000.0));
+                var totalTime = new TimeSpan(0, 0, 0, (int)Math.Ceiling(
+                    ((TilesX * TilesY * TileWaitTime) +
+                    ((TilesX - 1) * 2 * (TilesY - 1) * MouseDragStepsX.Count() +
+                    (TilesY - 1) * MouseDragStepsY.Count()) * DragStepTime +
+                    PrestartWaitTime + StartWaitTime)
+                    / 1000.0));
+                lblTotalTime.Text = totalTime.ToString(@"h\:mm\:ss");
             }
             if (radKeyboardControl.Checked)
             {
-                lblTotalTime.Text = string.Format("{0} sec",
-                    Math.Ceiling(((TilesX * TilesY * TileWaitTime) +
-                                  ((TilesX - 1) * 2 * (TilesY - 1) * KeyboardDragStepsX +
-                                   (TilesY - 1) * KeyboardDragStepsY) * DragStepTime +
-                                  StartWaitTime)
-                                 / 1000.0));
+                var totalTime = new TimeSpan(0, 0, 0, (int)Math.Ceiling(
+                    ((TilesX * TilesY * TileWaitTime) +
+                     ((TilesX - 1) * 2 * (TilesY - 1) * KeyboardDragStepsX +
+                      (TilesY - 1) * KeyboardDragStepsY) * DragStepTime +
+                     PrestartWaitTime + StartWaitTime)
+                    / 1000.0));
+                lblTotalTime.Text = totalTime.ToString(@"h\:mm\:ss");
             }
 
             lblDragRegion.Enabled = radMouseControl.Checked;
@@ -197,7 +201,7 @@ namespace MapMap
                 MouseController.MouseDown();
                 foreach (var sy in MouseDragStepsY)
                 {
-                    var d = sy*(reverse ? -1 : 1);
+                    var d = sy * (reverse ? -1 : 1);
                     Cursor.Position = new Point(x, Cursor.Position.Y + d);
                     Thread.Sleep(DragStepTime);
                 }
