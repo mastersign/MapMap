@@ -3,6 +3,8 @@ MapMap
 
 A Windows tool to capture large pictures from online maps in a browser.
 
+![MapMap Logo](icon/MapMap_256.png)
+
 Usage
 -----
 
