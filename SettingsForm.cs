@@ -266,6 +266,21 @@ namespace MapMap
                 DragY();
             }
 
+            if (chkReturnToStart.Checked)
+            {
+                if (TilesY % 2 == 1)
+                {
+                    for (var tx = 0; tx < TilesX - 1; tx++)
+                    {
+                        DragX(false);
+                    }
+                }
+                for (var ty = 0; ty < TilesY - 1; ty++)
+                {
+                    DragY(false);
+                }
+            }
+
             btnStart.Enabled = true;
             bitmap = bmp;
             btnSave.Enabled = true;

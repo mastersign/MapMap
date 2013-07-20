@@ -79,6 +79,7 @@ namespace MapMap
             this.lblKeyStepY = new System.Windows.Forms.Label();
             this.lblStartWaitTime2 = new System.Windows.Forms.Label();
             this.numStartWaitTime2 = new System.Windows.Forms.NumericUpDown();
+            this.chkReturnToStart = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistLeft)).BeginInit();
@@ -781,11 +782,24 @@ namespace MapMap
             0});
             this.numStartWaitTime2.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
+            // chkReturnToStart
+            // 
+            this.chkReturnToStart.AutoSize = true;
+            this.chkReturnToStart.Checked = true;
+            this.chkReturnToStart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkReturnToStart.Location = new System.Drawing.Point(382, 51);
+            this.chkReturnToStart.Name = "chkReturnToStart";
+            this.chkReturnToStart.Size = new System.Drawing.Size(119, 17);
+            this.chkReturnToStart.TabIndex = 18;
+            this.chkReturnToStart.Text = "Return to start point";
+            this.chkReturnToStart.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 472);
+            this.Controls.Add(this.chkReturnToStart);
             this.Controls.Add(this.radKeyboardControl);
             this.Controls.Add(this.radMouseControl);
             this.Controls.Add(this.lblCaptureRegionSize);
@@ -905,6 +919,7 @@ namespace MapMap
         private System.Windows.Forms.Label lblKeyStepY;
         private System.Windows.Forms.Label lblStartWaitTime2;
         private System.Windows.Forms.NumericUpDown numStartWaitTime2;
+        private System.Windows.Forms.CheckBox chkReturnToStart;
     }
 }
 
