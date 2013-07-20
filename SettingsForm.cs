@@ -269,6 +269,7 @@ namespace MapMap
             btnStart.Enabled = true;
             bitmap = bmp;
             btnSave.Enabled = true;
+            Activate();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
