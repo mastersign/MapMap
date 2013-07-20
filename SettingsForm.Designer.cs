@@ -80,6 +80,7 @@ namespace MapMap
             this.lblStartWaitTime2 = new System.Windows.Forms.Label();
             this.numStartWaitTime2 = new System.Windows.Forms.NumericUpDown();
             this.chkReturnToStart = new System.Windows.Forms.CheckBox();
+            this.lblCancelationHint = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistLeft)).BeginInit();
@@ -592,7 +593,7 @@ namespace MapMap
             this.numStartWaitTime1.Size = new System.Drawing.Size(56, 20);
             this.numStartWaitTime1.TabIndex = 7;
             this.numStartWaitTime1.Value = new decimal(new int[] {
-            3,
+            4,
             0,
             0,
             0});
@@ -625,7 +626,7 @@ namespace MapMap
             this.pictureBox.InfoForegroundColor = System.Drawing.SystemColors.WindowText;
             this.pictureBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             this.pictureBox.IsBoundToMaster = false;
-            this.pictureBox.Location = new System.Drawing.Point(217, 75);
+            this.pictureBox.Location = new System.Drawing.Point(217, 99);
             this.pictureBox.Master = null;
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.OrientationBackgroundColor = System.Drawing.SystemColors.Window;
@@ -636,7 +637,7 @@ namespace MapMap
             this.pictureBox.ShowRotationTools = true;
             this.pictureBox.ShowSelectionTools = false;
             this.pictureBox.ShowZoomLevelTools = true;
-            this.pictureBox.Size = new System.Drawing.Size(414, 385);
+            this.pictureBox.Size = new System.Drawing.Size(414, 361);
             this.pictureBox.SuppressInterpolation = true;
             this.pictureBox.TabIndex = 16;
             this.pictureBox.WaitAnimationInterval = 50;
@@ -776,7 +777,7 @@ namespace MapMap
             this.numStartWaitTime2.Size = new System.Drawing.Size(56, 20);
             this.numStartWaitTime2.TabIndex = 7;
             this.numStartWaitTime2.Value = new decimal(new int[] {
-            5,
+            4,
             0,
             0,
             0});
@@ -794,11 +795,23 @@ namespace MapMap
             this.chkReturnToStart.Text = "Return to start point";
             this.chkReturnToStart.UseVisualStyleBackColor = true;
             // 
+            // lblCancelationHint
+            // 
+            this.lblCancelationHint.AutoSize = true;
+            this.lblCancelationHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCancelationHint.Location = new System.Drawing.Point(214, 80);
+            this.lblCancelationHint.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCancelationHint.Name = "lblCancelationHint";
+            this.lblCancelationHint.Size = new System.Drawing.Size(400, 13);
+            this.lblCancelationHint.TabIndex = 19;
+            this.lblCancelationHint.Text = "Press and hold the ALT modifier key to cancel the capturing process.";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 472);
+            this.Controls.Add(this.lblCancelationHint);
             this.Controls.Add(this.chkReturnToStart);
             this.Controls.Add(this.radKeyboardControl);
             this.Controls.Add(this.radMouseControl);
@@ -920,6 +933,7 @@ namespace MapMap
         private System.Windows.Forms.Label lblStartWaitTime2;
         private System.Windows.Forms.NumericUpDown numStartWaitTime2;
         private System.Windows.Forms.CheckBox chkReturnToStart;
+        private System.Windows.Forms.Label lblCancelationHint;
     }
 }
 

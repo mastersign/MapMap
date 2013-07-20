@@ -14,6 +14,7 @@ namespace MapMap
     public partial class SettingsForm : Form
     {
         private Bitmap bitmap;
+        private bool canceled;
 
         public SettingsForm()
         {
@@ -177,6 +178,7 @@ namespace MapMap
                     var d = sx * (reverse ? -1 : 1);
                     Cursor.Position = new Point(Cursor.Position.X + d, y);
                     Thread.Sleep(DragStepTime);
+                    if (IsCanceled) break;
                 }
                 MouseController.MouseUp();
             }
@@ -186,6 +188,7 @@ namespace MapMap
                 {
                     SendKeys.SendWait(reverse ? "{RIGHT}" : "{LEFT}");
                     Thread.Sleep(DragStepTime);
+                    if (IsCanceled) break;
                 }
             }
         }
@@ -204,6 +207,7 @@ namespace MapMap
                     var d = sy * (reverse ? -1 : 1);
                     Cursor.Position = new Point(x, Cursor.Position.Y + d);
                     Thread.Sleep(DragStepTime);
+                    if (IsCanceled) break;
                 }
                 MouseController.MouseUp();
             }
@@ -213,6 +217,7 @@ namespace MapMap
                 {
                     SendKeys.SendWait(reverse ? "{DOWN}" : "{UP}");
                     Thread.Sleep(DragStepTime);
+                    if (IsCanceled) break;
                 }
             }
         }
@@ -233,58 +238,96 @@ namespace MapMap
             Application.DoEvents();
         }
 
+        private bool IsCanceled
+        {
+            get
+            {
+                if (ModifierKeys == Keys.Alt)
+                {
+                    canceled = true;
+                }
+                return canceled;
+            }
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
+            canceled = false;
             btnStart.Enabled = false;
             var dr = DragRegion;
             var s = TotalSize;
-            var bmp = new Bitmap(s.Width, s.Height);
+            var bmp = new Bitmap(s.Width, s.Height, PixelFormat.Format24bppRgb);
             UpdatePreview(bmp);
             pictureBox.ViewFit();
             Application.DoEvents();
-            Thread.Sleep(StartWaitTime / 2);
-
-            Cursor.Position = new Point(dr.X + dr.Width / 2, dr.Y + dr.Height / 2);
-            MouseController.Click();
-            Thread.Sleep(StartWaitTime / 2);
-
-            var reverse = true;
-            for (var ty = 0; ty < TilesY; ty++)
+            Thread.Sleep(PrestartWaitTime);
+            Application.DoEvents();
+            if (!IsCanceled)
             {
-                var py = ty * dr.Height;
-                for (var tx = 0; tx < TilesX; tx++)
-                {
-                    var px = reverse ? tx * dr.Width : (TilesX - 1 - tx) * dr.Width;
-                    Thread.Sleep(TileWaitTime);
-                    CaptureMapRegion(bmp, px, py);
-                    UpdatePreview(bmp);
-                    if (tx == TilesX - 1) continue;
-                    DragX(reverse);
-                }
-                reverse = !reverse;
-                if (ty == TilesY - 1) continue;
-                DragY();
-            }
 
-            if (chkReturnToStart.Checked)
-            {
-                if (TilesY % 2 == 1)
+                Cursor.Position = new Point(dr.X + dr.Width / 2, dr.Y + dr.Height / 2);
+                MouseController.Click();
+                Application.DoEvents();
+                Thread.Sleep(StartWaitTime);
+                Application.DoEvents();
+                if (!IsCanceled)
                 {
-                    for (var tx = 0; tx < TilesX - 1; tx++)
+
+                    var reverse = true;
+                    for (var ty = 0; ty < TilesY; ty++)
                     {
-                        DragX(false);
+                        var py = ty * dr.Height;
+                        for (var tx = 0; tx < TilesX; tx++)
+                        {
+                            var px = reverse ? tx * dr.Width : (TilesX - 1 - tx) * dr.Width;
+                            Thread.Sleep(TileWaitTime);
+
+                            if (IsCanceled) break;
+
+                            CaptureMapRegion(bmp, px, py);
+                            UpdatePreview(bmp);
+                            if (tx == TilesX - 1) continue;
+                            DragX(reverse);
+
+                            if (IsCanceled) break;
+                        }
+                        if (IsCanceled) break;
+
+                        reverse = !reverse;
+                        if (ty == TilesY - 1) continue;
+                        DragY();
+
+                        if (IsCanceled) break;
                     }
-                }
-                for (var ty = 0; ty < TilesY - 1; ty++)
-                {
-                    DragY(false);
+
+                    if (chkReturnToStart.Checked)
+                    {
+                        if (TilesY % 2 == 1)
+                        {
+                            for (var tx = 0; tx < TilesX - 1; tx++)
+                            {
+                                DragX(false);
+                            }
+                        }
+                        for (var ty = 0; ty < TilesY - 1; ty++)
+                        {
+                            DragY(false);
+                        }
+                    }
+
+                    bitmap = bmp;
+                    btnSave.Enabled = true;
                 }
             }
-
             btnStart.Enabled = true;
-            bitmap = bmp;
-            btnSave.Enabled = true;
             Activate();
+            if (canceled)
+            {
+                MessageBox.Show(this,
+                    "The capturing was interrupted by the user. The result is incomplete.",
+                    "Captureing canceled",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
