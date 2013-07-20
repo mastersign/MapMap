@@ -12,16 +12,138 @@ namespace de.mastersign.mapmap
     public partial class SettingsForm : Form
     {
         private Bitmap bitmap;
+        private bool initializing;
+        private bool automatic;
         private bool canceled;
 
-        public SettingsForm()
+        public SettingsForm(CaptureSettings cs)
         {
             InitializeComponent();
-            ValueChangeHandler(this, EventArgs.Empty);
             if (Screen.AllScreens.Length > 1)
             {
-                numStartWaitTime1.Value = 0.1M;
+                numPrestartWaitTime.Value = 0.1M;
             }
+            Initialize(cs);
+        }
+
+        private void ValueChangeHandler(object sender, EventArgs e)
+        {
+            if (initializing) return;
+            var dr = DragRegion;
+            var tr = TileRegion;
+            var s = TotalSize;
+            lblDragRegionSize.Text = string.Format("{0} x {1} px",
+                dr.Width, dr.Height);
+            lblCaptureRegionSize.Text = string.Format("{0} x {1} px",
+                tr.Width, tr.Height);
+            lblDragSteps.Text = string.Format("{0} x {1}",
+                MouseDragStepsX.Count(), MouseDragStepsY.Count());
+            lblTotalSize.Text = string.Format("{0} x {1} px",
+                s.Width, s.Height);
+
+            if (radMouseControl.Checked)
+            {
+                var totalTime = new TimeSpan(0, 0, 0, (int)Math.Ceiling(
+                    ((TilesX * TilesY * TileWaitTime) +
+                     ((TilesX - 1) * 2 * (TilesY - 1) * MouseDragStepsX.Count() +
+                      (TilesY - 1) * MouseDragStepsY.Count()) * DragStepTime +
+                     PrestartWaitTime + StartWaitTime)
+                    / 1000.0));
+                lblTotalTime.Text = totalTime.ToString(@"h\:mm\:ss");
+            }
+            if (radKeyboardControl.Checked)
+            {
+                var totalTime = new TimeSpan(0, 0, 0, (int)Math.Ceiling(
+                    ((TilesX * TilesY * TileWaitTime) +
+                     ((TilesX - 1) * 2 * (TilesY - 1) * KeyboardDragStepsX +
+                      (TilesY - 1) * KeyboardDragStepsY) * DragStepTime +
+                     PrestartWaitTime + StartWaitTime)
+                    / 1000.0));
+                lblTotalTime.Text = totalTime.ToString(@"h\:mm\:ss");
+            }
+
+            lblDragRegion.Enabled = radMouseControl.Checked;
+            numDragDistTop.Enabled = radMouseControl.Checked;
+            numDragDistRight.Enabled = radMouseControl.Checked;
+            numDragDistBottom.Enabled = radMouseControl.Checked;
+            numDragDistLeft.Enabled = radMouseControl.Checked;
+            lblDragStepSize.Enabled = radMouseControl.Checked;
+            numDragStepSize.Enabled = radMouseControl.Checked;
+
+            lblKeyStepX.Enabled = radKeyboardControl.Checked;
+            numKeyStepX.Enabled = radKeyboardControl.Checked;
+            lblKeyStepY.Enabled = radKeyboardControl.Checked;
+            numKeyStepY.Enabled = radKeyboardControl.Checked;
+        }
+
+        private void Initialize(CaptureSettings ss)
+        {
+            initializing = true;
+            if (ss.CaptureRegionTop.HasValue) numCapDistTop.Value = ss.CaptureRegionTop.Value;
+            if (ss.CaptureRegionRight.HasValue) numCapDistRight.Value = ss.CaptureRegionRight.Value;
+            if (ss.CaptureRegionBottom.HasValue) numCapDistBottom.Value = ss.CaptureRegionBottom.Value;
+            if (ss.CaptureRegionLeft.HasValue) numCapDistLeft.Value = ss.CaptureRegionLeft.Value;
+            if (ss.TilesX.HasValue) numTilesX.Value = ss.TilesX.Value;
+            if (ss.TilesY.HasValue) numTilesY.Value = ss.TilesY.Value;
+            if (ss.ControlMode.HasValue)
+            {
+                switch (ss.ControlMode.Value)
+                {
+                    case CaptureSettings.ControlModes.Mouse:
+                        radMouseControl.Checked = true;
+                        break;
+                    case CaptureSettings.ControlModes.Keyboard:
+                        radKeyboardControl.Checked = true;
+                        break;
+                }
+            }
+            if (ss.MouseDragRegionTop.HasValue) numDragDistTop.Value = ss.MouseDragRegionTop.Value;
+            if (ss.MouseDragRegionRight.HasValue) numDragDistRight.Value = ss.MouseDragRegionRight.Value;
+            if (ss.MouseDragRegionBottom.HasValue) numDragDistBottom.Value = ss.MouseDragRegionBottom.Value;
+            if (ss.MouseDragRegionLeft.HasValue) numDragDistLeft.Value = ss.MouseDragRegionLeft.Value;
+            if (ss.MouseDragStepSize.HasValue) numDragStepSize.Value = ss.MouseDragStepSize.Value;
+            if (ss.KeyboardStepSizeX.HasValue) numKeyStepX.Value = ss.KeyboardStepSizeX.Value;
+            if (ss.KeyboardStepSizeY.HasValue) numKeyStepY.Value = ss.KeyboardStepSizeY.Value;
+            if (ss.TileWaitTime.HasValue) numTileWaitTime.Value = ss.TileWaitTime.Value;
+            if (ss.StepWaitTime.HasValue) numStepWaitTime.Value = ss.StepWaitTime.Value;
+            if (ss.PrestartWaitTime.HasValue) numPrestartWaitTime.Value = ss.PrestartWaitTime.Value;
+            if (ss.StartWaitTime.HasValue) numStartWaitTime.Value = ss.StartWaitTime.Value;
+            if (ss.ReturnToStart.HasValue) chkReturnToStart.Checked = ss.ReturnToStart.Value;
+            if (ss.Automatic.HasValue) automatic = ss.Automatic.Value;
+            initializing = false;
+            ValueChangeHandler(this, EventArgs.Empty);
+
+            if (automatic)
+            {
+                RunAutomatic();   
+            }
+        }
+
+        private CaptureSettings BuildCaptureSettings()
+        {
+            var cs = new CaptureSettings
+            {
+                CaptureRegionTop = (int)numCapDistTop.Value,
+                CaptureRegionRight = (int)numCapDistRight.Value,
+                CaptureRegionBottom = (int)numCapDistBottom.Value,
+                CaptureRegionLeft = (int)numCapDistLeft.Value,
+                TilesX = (int)numTilesX.Value,
+                TilesY = (int)numTilesY.Value,
+                ControlMode = radKeyboardControl.Checked ? CaptureSettings.ControlModes.Keyboard : CaptureSettings.ControlModes.Mouse,
+                MouseDragRegionTop = (int)numDragDistTop.Value,
+                MouseDragRegionRight = (int)numDragDistRight.Value,
+                MouseDragRegionBottom = (int)numDragDistBottom.Value,
+                MouseDragRegionLeft = (int)numDragDistLeft.Value,
+                MouseDragStepSize = (int)numDragStepSize.Value,
+                KeyboardStepSizeX = (int)numKeyStepX.Value,
+                KeyboardStepSizeY = (int)numKeyStepY.Value,
+                TileWaitTime = numTileWaitTime.Value,
+                StepWaitTime = numStepWaitTime.Value,
+                PrestartWaitTime = numPrestartWaitTime.Value,
+                StartWaitTime = numStartWaitTime.Value,
+                ReturnToStart = chkReturnToStart.Checked,
+            };
+            return cs;
         }
 
         private Rectangle ScreenRegion
@@ -79,7 +201,7 @@ namespace de.mastersign.mapmap
 
         private int KeyboardDragStepsY { get { return TileRegion.Height / KeyboardDragStepY; } }
 
-        private int DragStepTime { get { return (int)(numDragStepTime.Value * 1000); } }
+        private int DragStepTime { get { return (int)(numStepWaitTime.Value * 1000); } }
 
         private int TilesX { get { return (int)numTilesX.Value; } }
 
@@ -100,59 +222,9 @@ namespace de.mastersign.mapmap
 
         private int TileWaitTime { get { return (int)(numTileWaitTime.Value * 1000); } }
 
-        private int PrestartWaitTime { get { return (int)(numStartWaitTime1.Value * 1000); } }
+        private int PrestartWaitTime { get { return (int)(numPrestartWaitTime.Value * 1000); } }
 
-        private int StartWaitTime { get { return (int)(numStartWaitTime2.Value * 1000); } }
-
-        private void ValueChangeHandler(object sender, EventArgs e)
-        {
-            var dr = DragRegion;
-            var tr = TileRegion;
-            var s = TotalSize;
-            lblDragRegionSize.Text = string.Format("{0} x {1} px",
-                dr.Width, dr.Height);
-            lblCaptureRegionSize.Text = string.Format("{0} x {1} px",
-                tr.Width, tr.Height);
-            lblDragSteps.Text = string.Format("{0} x {1}",
-                MouseDragStepsX.Count(), MouseDragStepsY.Count());
-            lblTotalSize.Text = string.Format("{0} x {1} px",
-                s.Width, s.Height);
-
-            if (radMouseControl.Checked)
-            {
-                var totalTime = new TimeSpan(0, 0, 0, (int)Math.Ceiling(
-                    ((TilesX * TilesY * TileWaitTime) +
-                    ((TilesX - 1) * 2 * (TilesY - 1) * MouseDragStepsX.Count() +
-                    (TilesY - 1) * MouseDragStepsY.Count()) * DragStepTime +
-                    PrestartWaitTime + StartWaitTime)
-                    / 1000.0));
-                lblTotalTime.Text = totalTime.ToString(@"h\:mm\:ss");
-            }
-            if (radKeyboardControl.Checked)
-            {
-                var totalTime = new TimeSpan(0, 0, 0, (int)Math.Ceiling(
-                    ((TilesX * TilesY * TileWaitTime) +
-                     ((TilesX - 1) * 2 * (TilesY - 1) * KeyboardDragStepsX +
-                      (TilesY - 1) * KeyboardDragStepsY) * DragStepTime +
-                     PrestartWaitTime + StartWaitTime)
-                    / 1000.0));
-                lblTotalTime.Text = totalTime.ToString(@"h\:mm\:ss");
-            }
-
-            lblDragRegion.Enabled = radMouseControl.Checked;
-            numDragDistTop.Enabled = radMouseControl.Checked;
-            numDragDistRight.Enabled = radMouseControl.Checked;
-            numDragDistBottom.Enabled = radMouseControl.Checked;
-            numDragDistLeft.Enabled = radMouseControl.Checked;
-            lblDragStepSize.Enabled = radMouseControl.Checked;
-            numDragStepSize.Enabled = radMouseControl.Checked;
-
-            lblKeyStepX.Enabled = radKeyboardControl.Checked;
-            numKeyStepX.Enabled = radKeyboardControl.Checked;
-            lblKeyStepY.Enabled = radKeyboardControl.Checked;
-            numKeyStepY.Enabled = radKeyboardControl.Checked;
-
-        }
+        private int StartWaitTime { get { return (int)(numStartWaitTime.Value * 1000); } }
 
         private Size TotalSize
         {
@@ -252,6 +324,12 @@ namespace de.mastersign.mapmap
             }
         }
 
+        private void RunAutomatic()
+        {
+            Visible = false;
+            btnStart_Click(btnStart, EventArgs.Empty);
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             canceled = false;
@@ -266,7 +344,6 @@ namespace de.mastersign.mapmap
             Application.DoEvents();
             if (!IsCanceled)
             {
-
                 Cursor.Position = new Point(dr.X + dr.Width / 2, dr.Y + dr.Height / 2);
                 MouseController.Click();
                 Application.DoEvents();
@@ -287,7 +364,10 @@ namespace de.mastersign.mapmap
                             if (IsCanceled) break;
 
                             CaptureMapRegion(bmp, px, py);
-                            UpdatePreview(bmp);
+                            if (!automatic)
+                            {
+                                UpdatePreview(bmp);
+                            }
                             if (tx == TilesX - 1) continue;
                             DragX(reverse);
 
@@ -318,10 +398,12 @@ namespace de.mastersign.mapmap
                     }
 
                     bitmap = bmp;
+                    UpdatePreview(bitmap);
                     btnSave.Enabled = true;
                 }
             }
             btnStart.Enabled = true;
+            Visible = true;
             Activate();
             if (canceled)
             {
@@ -349,6 +431,36 @@ namespace de.mastersign.mapmap
         private void btnHelp_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/mastersign/MapMap/blob/master/README.md");
+        }
+
+        private void btnCreateShortcut_Click(object sender, EventArgs e)
+        {
+            var cs = BuildCaptureSettings();
+            if (MessageBox.Show(this, 
+                    "Would you activate the automatic start for the shortcut?", 
+                    "Automatic start",
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                cs.Automatic = true;
+            }
+
+            var sfdlg = new SaveFileDialog();
+            sfdlg.Title = "Create shortcut...";
+            sfdlg.Filter = "Shortcut|*.lnk";
+            sfdlg.DefaultExt = "lnk";
+            sfdlg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            sfdlg.FileName = "MapMap";
+            if (sfdlg.ShowDialog(this) == DialogResult.OK)
+            {
+                var shortcut = new ShellShortcut(sfdlg.FileName);
+                shortcut.Path = Application.ExecutablePath;
+                shortcut.IconPath = Application.ExecutablePath;
+                shortcut.IconIndex = 0;
+                shortcut.Arguments = cs.BuildCommandLineArguments();
+                shortcut.Save();
+            }
         }
     }
 }

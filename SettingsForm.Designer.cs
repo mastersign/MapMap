@@ -34,7 +34,6 @@ namespace de.mastersign.mapmap
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            this.btnStart = new System.Windows.Forms.Button();
             this.numTilesX = new System.Windows.Forms.NumericUpDown();
             this.numTilesY = new System.Windows.Forms.NumericUpDown();
             this.lblTilesX = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@ namespace de.mastersign.mapmap
             this.numDragStepSize = new System.Windows.Forms.NumericUpDown();
             this.lblDragStepSize = new System.Windows.Forms.Label();
             this.lblDragStepTime = new System.Windows.Forms.Label();
-            this.numDragStepTime = new System.Windows.Forms.NumericUpDown();
+            this.numStepWaitTime = new System.Windows.Forms.NumericUpDown();
             this.numTileWaitTime = new System.Windows.Forms.NumericUpDown();
             this.lblTileWaitTime = new System.Windows.Forms.Label();
             this.numCapDistBottom = new System.Windows.Forms.NumericUpDown();
@@ -69,9 +68,8 @@ namespace de.mastersign.mapmap
             this.lblTotalSize = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblStartWaitTime1 = new System.Windows.Forms.Label();
-            this.numStartWaitTime1 = new System.Windows.Forms.NumericUpDown();
+            this.numPrestartWaitTime = new System.Windows.Forms.NumericUpDown();
             this.pictureBox = new de.mastersign.controls.ZoomPictureBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.radMouseControl = new System.Windows.Forms.RadioButton();
             this.radKeyboardControl = new System.Windows.Forms.RadioButton();
             this.numKeyStepX = new System.Windows.Forms.NumericUpDown();
@@ -79,11 +77,14 @@ namespace de.mastersign.mapmap
             this.lblKeyStepX = new System.Windows.Forms.Label();
             this.lblKeyStepY = new System.Windows.Forms.Label();
             this.lblStartWaitTime2 = new System.Windows.Forms.Label();
-            this.numStartWaitTime2 = new System.Windows.Forms.NumericUpDown();
+            this.numStartWaitTime = new System.Windows.Forms.NumericUpDown();
             this.chkReturnToStart = new System.Windows.Forms.CheckBox();
             this.lblCancelationHint = new System.Windows.Forms.Label();
-            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnCreateShortcut = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTilesY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistLeft)).BeginInit();
@@ -91,31 +92,17 @@ namespace de.mastersign.mapmap
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragStepSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDragStepTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStepWaitTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTileWaitTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrestartWaitTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnStart
-            // 
-            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.Image = global::de.mastersign.mapmap.Properties.Resources.record_16;
-            this.btnStart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStart.Location = new System.Drawing.Point(599, 12);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(60, 25);
-            this.btnStart.TabIndex = 44;
-            this.btnStart.Text = "Start";
-            this.btnStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // numTilesX
             // 
@@ -306,34 +293,34 @@ namespace de.mastersign.mapmap
             this.lblDragStepTime.TabIndex = 26;
             this.lblDragStepTime.Text = "Step Delay";
             // 
-            // numDragStepTime
+            // numStepWaitTime
             // 
-            this.numDragStepTime.DecimalPlaces = 3;
-            this.numDragStepTime.Increment = new decimal(new int[] {
+            this.numStepWaitTime.DecimalPlaces = 3;
+            this.numStepWaitTime.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numDragStepTime.Location = new System.Drawing.Point(114, 392);
-            this.numDragStepTime.Maximum = new decimal(new int[] {
+            this.numStepWaitTime.Location = new System.Drawing.Point(114, 392);
+            this.numStepWaitTime.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.numDragStepTime.Minimum = new decimal(new int[] {
+            this.numStepWaitTime.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             196608});
-            this.numDragStepTime.Name = "numDragStepTime";
-            this.numDragStepTime.Size = new System.Drawing.Size(56, 20);
-            this.numDragStepTime.TabIndex = 27;
-            this.numDragStepTime.Value = new decimal(new int[] {
+            this.numStepWaitTime.Name = "numStepWaitTime";
+            this.numStepWaitTime.Size = new System.Drawing.Size(56, 20);
+            this.numStepWaitTime.TabIndex = 27;
+            this.numStepWaitTime.Value = new decimal(new int[] {
             33,
             0,
             0,
             196608});
-            this.numDragStepTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
+            this.numStepWaitTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // numTileWaitTime
             // 
@@ -576,34 +563,34 @@ namespace de.mastersign.mapmap
             this.lblStartWaitTime1.TabIndex = 28;
             this.lblStartWaitTime1.Text = "Prestart Delay";
             // 
-            // numStartWaitTime1
+            // numPrestartWaitTime
             // 
-            this.numStartWaitTime1.DecimalPlaces = 3;
-            this.numStartWaitTime1.Increment = new decimal(new int[] {
+            this.numPrestartWaitTime.DecimalPlaces = 3;
+            this.numPrestartWaitTime.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numStartWaitTime1.Location = new System.Drawing.Point(114, 416);
-            this.numStartWaitTime1.Maximum = new decimal(new int[] {
+            this.numPrestartWaitTime.Location = new System.Drawing.Point(114, 416);
+            this.numPrestartWaitTime.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.numStartWaitTime1.Minimum = new decimal(new int[] {
+            this.numPrestartWaitTime.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             196608});
-            this.numStartWaitTime1.Name = "numStartWaitTime1";
-            this.numStartWaitTime1.Size = new System.Drawing.Size(56, 20);
-            this.numStartWaitTime1.TabIndex = 29;
-            this.numStartWaitTime1.Value = new decimal(new int[] {
+            this.numPrestartWaitTime.Name = "numPrestartWaitTime";
+            this.numPrestartWaitTime.Size = new System.Drawing.Size(56, 20);
+            this.numPrestartWaitTime.TabIndex = 29;
+            this.numPrestartWaitTime.Value = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numStartWaitTime1.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
+            this.numPrestartWaitTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // pictureBox
             // 
@@ -643,28 +630,13 @@ namespace de.mastersign.mapmap
             this.pictureBox.ShowRotationTools = true;
             this.pictureBox.ShowSelectionTools = false;
             this.pictureBox.ShowZoomLevelTools = true;
-            this.pictureBox.Size = new System.Drawing.Size(475, 361);
+            this.pictureBox.Size = new System.Drawing.Size(475, 391);
             this.pictureBox.SuppressInterpolation = true;
             this.pictureBox.TabIndex = 48;
             this.pictureBox.WaitAnimationInterval = 50;
             this.pictureBox.WaitingAnimation = false;
             this.pictureBox.WaitingAnimationBlend = false;
             this.pictureBox.Zoom = 0F;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Enabled = false;
-            this.btnSave.Image = global::de.mastersign.mapmap.Properties.Resources.save_16;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(599, 43);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(60, 25);
-            this.btnSave.TabIndex = 45;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // radMouseControl
             // 
@@ -763,34 +735,34 @@ namespace de.mastersign.mapmap
             this.lblStartWaitTime2.TabIndex = 30;
             this.lblStartWaitTime2.Text = "Start Delay";
             // 
-            // numStartWaitTime2
+            // numStartWaitTime
             // 
-            this.numStartWaitTime2.DecimalPlaces = 3;
-            this.numStartWaitTime2.Increment = new decimal(new int[] {
+            this.numStartWaitTime.DecimalPlaces = 3;
+            this.numStartWaitTime.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numStartWaitTime2.Location = new System.Drawing.Point(114, 440);
-            this.numStartWaitTime2.Maximum = new decimal(new int[] {
+            this.numStartWaitTime.Location = new System.Drawing.Point(114, 440);
+            this.numStartWaitTime.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.numStartWaitTime2.Minimum = new decimal(new int[] {
+            this.numStartWaitTime.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             196608});
-            this.numStartWaitTime2.Name = "numStartWaitTime2";
-            this.numStartWaitTime2.Size = new System.Drawing.Size(56, 20);
-            this.numStartWaitTime2.TabIndex = 31;
-            this.numStartWaitTime2.Value = new decimal(new int[] {
+            this.numStartWaitTime.Name = "numStartWaitTime";
+            this.numStartWaitTime.Size = new System.Drawing.Size(56, 20);
+            this.numStartWaitTime.TabIndex = 31;
+            this.numStartWaitTime.Value = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numStartWaitTime2.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
+            this.numStartWaitTime.ValueChanged += new System.EventHandler(this.ValueChangeHandler);
             // 
             // chkReturnToStart
             // 
@@ -814,16 +786,33 @@ namespace de.mastersign.mapmap
             this.lblCancelationHint.TabIndex = 43;
             this.lblCancelationHint.Text = "Press and hold the ALT modifier key to cancel the capturing process.";
             // 
-            // btnAbout
+            // btnCreateShortcut
             // 
-            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbout.Image = global::de.mastersign.mapmap.Properties.Resources.info_16;
-            this.btnAbout.Location = new System.Drawing.Point(665, 12);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(27, 25);
-            this.btnAbout.TabIndex = 46;
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            this.btnCreateShortcut.Image = global::de.mastersign.mapmap.Properties.Resources.shortcut_16;
+            this.btnCreateShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateShortcut.Location = new System.Drawing.Point(12, 466);
+            this.btnCreateShortcut.Name = "btnCreateShortcut";
+            this.btnCreateShortcut.Size = new System.Drawing.Size(189, 25);
+            this.btnCreateShortcut.TabIndex = 49;
+            this.btnCreateShortcut.Text = "Save settings as shortcut";
+            this.btnCreateShortcut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateShortcut.UseVisualStyleBackColor = true;
+            this.btnCreateShortcut.Click += new System.EventHandler(this.btnCreateShortcut_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Enabled = false;
+            this.btnSave.Image = global::de.mastersign.mapmap.Properties.Resources.save_16;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(599, 43);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(60, 25);
+            this.btnSave.TabIndex = 45;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnHelp
             // 
@@ -836,11 +825,37 @@ namespace de.mastersign.mapmap
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
+            // btnAbout
+            // 
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbout.Image = global::de.mastersign.mapmap.Properties.Resources.info_16;
+            this.btnAbout.Location = new System.Drawing.Point(665, 12);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(27, 25);
+            this.btnAbout.TabIndex = 46;
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStart.Image = global::de.mastersign.mapmap.Properties.Resources.record_16;
+            this.btnStart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStart.Location = new System.Drawing.Point(599, 12);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(60, 25);
+            this.btnStart.TabIndex = 44;
+            this.btnStart.Text = "Start";
+            this.btnStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 472);
+            this.ClientSize = new System.Drawing.Size(704, 502);
+            this.Controls.Add(this.btnCreateShortcut);
             this.Controls.Add(this.lblCancelationHint);
             this.Controls.Add(this.chkReturnToStart);
             this.Controls.Add(this.radKeyboardControl);
@@ -861,10 +876,10 @@ namespace de.mastersign.mapmap
             this.Controls.Add(this.numCapDistLeft);
             this.Controls.Add(this.lblCaptureRegion);
             this.Controls.Add(this.lblCaptureRegionRect);
-            this.Controls.Add(this.numStartWaitTime2);
-            this.Controls.Add(this.numStartWaitTime1);
+            this.Controls.Add(this.numStartWaitTime);
+            this.Controls.Add(this.numPrestartWaitTime);
             this.Controls.Add(this.numTileWaitTime);
-            this.Controls.Add(this.numDragStepTime);
+            this.Controls.Add(this.numStepWaitTime);
             this.Controls.Add(this.numDragStepSize);
             this.Controls.Add(this.numDragDistBottom);
             this.Controls.Add(this.lblStartWaitTime2);
@@ -891,7 +906,7 @@ namespace de.mastersign.mapmap
             this.Controls.Add(this.lblDragRegionRect);
             this.Controls.Add(this.pictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(720, 510);
+            this.MinimumSize = new System.Drawing.Size(720, 540);
             this.Name = "SettingsForm";
             this.Text = "MapMap";
             ((System.ComponentModel.ISupportInitialize)(this.numTilesX)).EndInit();
@@ -901,16 +916,16 @@ namespace de.mastersign.mapmap
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragDistBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDragStepSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDragStepTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStepWaitTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTileWaitTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCapDistLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrestartWaitTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKeyStepY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStartWaitTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -932,7 +947,7 @@ namespace de.mastersign.mapmap
         private System.Windows.Forms.NumericUpDown numDragStepSize;
         private System.Windows.Forms.Label lblDragStepSize;
         private System.Windows.Forms.Label lblDragStepTime;
-        private System.Windows.Forms.NumericUpDown numDragStepTime;
+        private System.Windows.Forms.NumericUpDown numStepWaitTime;
         private System.Windows.Forms.NumericUpDown numTileWaitTime;
         private System.Windows.Forms.Label lblTileWaitTime;
         private System.Windows.Forms.NumericUpDown numCapDistBottom;
@@ -953,7 +968,7 @@ namespace de.mastersign.mapmap
         private System.Windows.Forms.Label lblTotalSize;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Label lblStartWaitTime1;
-        private System.Windows.Forms.NumericUpDown numStartWaitTime1;
+        private System.Windows.Forms.NumericUpDown numPrestartWaitTime;
         private de.mastersign.controls.ZoomPictureBox pictureBox;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.RadioButton radMouseControl;
@@ -963,11 +978,12 @@ namespace de.mastersign.mapmap
         private System.Windows.Forms.Label lblKeyStepX;
         private System.Windows.Forms.Label lblKeyStepY;
         private System.Windows.Forms.Label lblStartWaitTime2;
-        private System.Windows.Forms.NumericUpDown numStartWaitTime2;
+        private System.Windows.Forms.NumericUpDown numStartWaitTime;
         private System.Windows.Forms.CheckBox chkReturnToStart;
         private System.Windows.Forms.Label lblCancelationHint;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Button btnCreateShortcut;
     }
 }
 
