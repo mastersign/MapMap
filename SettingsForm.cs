@@ -20,6 +20,10 @@ namespace MapMap
         {
             InitializeComponent();
             ValueChangeHandler(this, EventArgs.Empty);
+            if (Screen.AllScreens.Length > 1)
+            {
+                numStartWaitTime1.Value = 0.1M;
+            }
         }
 
         private Rectangle ScreenRegion
