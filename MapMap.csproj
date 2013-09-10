@@ -77,7 +77,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="ZoomPictureBox">
-      <HintPath>.\ZoomPictureBox.dll</HintPath>
+      <HintPath>.\lib\ZoomPictureBox.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
